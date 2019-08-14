@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/projects.min.css">
-
     <title>Стартовая страница</title>
 </head>
 <body>
@@ -63,12 +62,12 @@
         </div>
     </div>
 
-    <section class="page-head mb-40">
+    <section class="page-head projects-head mb-40 mb-md-0">
         <div class="container">
-            <h1 class="page-title">Проекты</h1>
+            <h1 class="page-title d-none d-lg-block">Проекты</h1>
             <hr>
-            <div class="row mt-40">
-                <div class="col-8 offset-2">
+            <div class="row mt-40 d-none d-lg-block">
+                <div class="col-lg-8 offset-lg-2">
                     <div class="search-block white mb-40">
                         <i class="icon icon-search"></i>
                         <input type="text" placeholder="Поиск"></div>
@@ -116,7 +115,7 @@
 
     <section>
         <div class="container">
-            <div class="tabs-header d-flex justify-content-center mb-40">
+            <div class="tabs-header d-flex justify-content-center mb-40 mb-md-0">
                 <ul class="nav nav-pills custom-nav" id="pills-tab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-favorites" role="tab" aria-controls="pills-favorites" aria-selected="true">Избранное</a>
@@ -130,7 +129,7 @@
                 </ul>
 
                 <div class="view-controls">
-                    <a href="#">
+                    <a href="#" class="filters-toggler">
                         <i class="icon icon-preferences"></i>
                         <span>Фильтры</span>
                     </a>
@@ -152,53 +151,56 @@
                     </a>
                 </div>
 
-                <a href="#">
+                <a href="#" class="filters-toggler">
                     <i class="icon icon-preferences"></i>
                     <span>Фильтры</span>
                 </a>
             </div>
-            <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="filter-selects d-flex justify-content-between mb-72">
-                        <div class="form-group">
-                            <select>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <select>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <select>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
+            <div class="filters-block">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="filter-selects d-flex justify-content-between mb-72">
+                            <div class="form-group">
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="range-slider">
+                    <input class="range-input" type="text" min="1790" max="2019" value="1900,1980" name="points" step="1" />
+                </div>
             </div>
 
-            <div class="range-slider">
-                <input class="range-input" type="text" min="1790" max="2019" value="1900,1980" name="points" step="1" />
-            </div>
 
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-favorites" role="tabpanel" aria-labelledby="pills-favorites-tab">
                     <div class="row grid mb-64">
-                        <div class="col-lg-5 offset-lg-1 grid-item">
+                        <div class="col-lg-5 offset-lg-1 grid-item mb-md-40">
                             <article class="big-article project">
                                 <div class="image">
                                     <img src="img/img12.png" alt="">
@@ -213,7 +215,7 @@
                                 </div>
                             </article>
                         </div>
-                        <div class="col-lg-5 grid-item">
+                        <div class="col-lg-5 grid-item mb-md-40">
                             <article class="big-article project right">
                                 <div class="image">
                                     <img src="img/img13.png" alt="">
@@ -228,7 +230,7 @@
                                 </div>
                             </article>
                         </div>
-                        <div class="col-lg-5 offset-lg-1 grid-item">
+                        <div class="col-lg-5 offset-lg-1 grid-item mb-md-40">
                             <article class="big-article project">
                                 <div class="image">
                                     <img src="img/img14.png" alt="">
@@ -243,7 +245,7 @@
                                 </div>
                             </article>
                         </div>
-                        <div class="col-lg-5 grid-item">
+                        <div class="col-lg-5 grid-item mb-md-40">
                             <article class="big-article project right">
                                 <div class="image">
                                     <img src="img/img15.png" alt="">
@@ -263,34 +265,34 @@
                 <div class="tab-pane fade" id="pills-chronology" role="tabpanel" aria-labelledby="pills-chronology-tab">
                     <div class="search-findings">
                         <div class="row mb-40">
-                            <div class="col-1 offset-2 search-category">2019</div>
-                            <div class="col-1 offset-1">
+                            <div class="col-lg-1 offset-lg-2 search-category mb-md-24">2019</div>
+                            <div class="col-lg-1 offset-lg-1 mb-md-16">
                                 <img src="img/img63.png" alt="">
                             </div>
-                            <div class="col-4">
+                            <div class="col-lg-4">
                                 <h5>Подготовка проекта планировки территории Нагатинской поймы</h5>
                             </div>
                         </div>
                         <div class="row mb-40">
-                            <div class="col-1 offset-2"></div>
-                            <div class="col-1 offset-1">
+                            <div class="col-lg-1 offset-lg-2"></div>
+                            <div class="col-lg-1 offset-lg-1 mb-md-16">
                                 <img src="img/img63.png" alt="">
                             </div>
-                            <div class="col-4">
+                            <div class="col-lg-4">
                                 <h5>Подготовка проекта планировки территории Нагатинской поймы</h5>
                             </div>
                         </div>
                         <div class="row mb-24">
-                            <div class="col-1 offset-2"></div>
-                            <div class="col-1 offset-1">
+                            <div class="col-lg-1 offset-lg-2"></div>
+                            <div class="col-lg-1 offset-lg-1 mb-md-16">
                                 <img src="img/img63.png" alt="">
                             </div>
-                            <div class="col-4">
+                            <div class="col-lg-4">
                                 <h5>Подготовка проекта планировки территории Нагатинской поймы</h5>
                             </div>
                         </div>
                         <div class="row mb-56">
-                            <div class="col-5 offset-4">
+                            <div class="col-lg-5 offset-lg-4">
                                 <a href="#" class="more-link">Показать все за 2019</a>
                             </div>
                         </div>
@@ -469,7 +471,6 @@
         </div>
     </footer>
 </div>
-
 
 <script src="js/main.min.js"></script>
 </body>

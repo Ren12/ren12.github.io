@@ -22438,6 +22438,9 @@ $(document).ready(function () {
         if (window.location.href.indexOf("projects") > -1) {
             $('.header-navigation').find('a[href="projects.html"]').addClass('active').siblings('a').removeClass('active');
         }else
+        if (window.location.href.indexOf("project") > -1) {
+            $('.header-navigation').find('a[href="project.html"]').addClass('active').siblings('a').removeClass('active');
+        }else
         if (window.location.href.indexOf("contacts") > -1) {
             $('.header-navigation').find('a[href="contacts.html"]').addClass('active').siblings('a').removeClass('active');
         }else
@@ -22445,6 +22448,12 @@ $(document).ready(function () {
             $('.header-navigation').find('a[href="events.html"]').addClass('active').siblings('a').removeClass('active');
         }else
         if (window.location.href.indexOf("services") > -1) {
+            $('.header-navigation').find('a[href="services.html"]').addClass('active').siblings('a').removeClass('active');
+        }else
+        if (window.location.href.indexOf("service") > -1) {
+            $('.header-navigation').find('a[href="services.html"]').addClass('active').siblings('a').removeClass('active');
+        }else
+        if (window.location.href.indexOf("order") > -1) {
             $('.header-navigation').find('a[href="services.html"]').addClass('active').siblings('a').removeClass('active');
         }
     });
@@ -22476,6 +22485,12 @@ $(document).ready(function () {
 
     $('.top-menu-toggler').on('click', function () {
         $('.top-menu-list').toggleClass('show');
+    });
+
+    $('.filters-toggler').on('click', function (e) {
+        e.preventDefault();
+        $('.filters-block').toggleClass('show');
+        return false
     });
 
     $(function () {
