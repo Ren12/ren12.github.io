@@ -68,20 +68,35 @@
             </div>
 
             <div class="row">
-                <div class="col-10 offset-1">
-                    <input type="text" value="Планировк">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="search-block">
+                        <i class="icon icon-search"></i>
+                        <input type="text" placeholder="Поиск" value="планировк"></div>
                 </div>
             </div>
         </section>
 
         <section>
             <!--табы-->
-            <div class="mb-48">
-                По релевантности
-                Статьи
-                Проекты
-                События
+            <div class="tabs-header d-flex justify-content-center mb-40">
+                <ul class="nav nav-pills custom-nav" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-tab1" data-toggle="pill" href="#pills-all" role="tab" aria-controls="pills-all" aria-selected="true">По релевантности</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-tab2" data-toggle="pill" href="#pills-ecology" role="tab" aria-controls="pills-ecology" aria-selected="false">Статьи</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-tab3" data-toggle="pill" href="#pills-building" role="tab" aria-controls="pills-building" aria-selected="false">Проекты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-tab4" data-toggle="pill" href="#pills-economy" role="tab" aria-controls="pills-economy" aria-selected="false">События</a>
+                    </li>
+                </ul>
             </div>
+        </section>
+
+        <section>
             <div class="search-findings">
                 <div class="row mb-48">
                     <div class="col-2 offset-1 search-category">
