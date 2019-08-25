@@ -22427,29 +22427,32 @@ $(document).ready(function () {
     // слайдеры
     $("#owl-slider1").owlCarousel({
         nav : true, // Show next and prev buttons
-        dots : false,
+        dots : true,
         slideSpeed : 300,
         paginationSpeed : 400,
-        singleItem:true,
+        singleItem : true,
         items : 1,
-        loop: true,
-        navText: ['←','→']
+        loop : true,
+        navText : ['←','→']
     });
 
-    $("#owl-slider3").owlCarousel({
+    $("#owl-slider2").owlCarousel({
         nav : true, // Show next and prev buttons
         dots : false,
         slideSpeed : 300,
         paginationSpeed : 400,
-        singleItem:true,
+        singleItem : true,
+        animateIn: 'fadeIn',
+        animateOut: 'fadeOut',
+        mouseDrag : false,
+        touchDrag : false,
         items : 1,
-        loop : true,
-        navText : ['←','→'],
-        onInitialized  : counter,
-        onTranslated : counter
+        navText : ['<i class="fal fa-long-arrow-left"></i>','<i class="fal fa-long-arrow-right"></i>'],
+        onInitialized  : slider2Counter,
+        onTranslated : slider2Counter
     });
 
-    function counter(event) {
+    function slider2Counter(event) {
         var element   = event.target;         // DOM element, in this example .owl-carousel
         var items     = event.item.count;     // Number of items
         var item      = event.item.index + 1;     // Position of the current item
@@ -22458,7 +22461,31 @@ $(document).ready(function () {
         if(item > items) {
             item = item - items
         }
-        $('#counter').html(item+"/"+items)
+        $('.slide-counts').html('<span>'+(item < 10 ? '0'+item : item)+'</span><span class="text-white">'+(items < 10 ? '0'+items : items)+'</span>');
+    }
+
+    $(".owl-slider3").owlCarousel({
+        nav : true, // Show next and prev buttons
+        dots : true,
+        slideSpeed : 300,
+        paginationSpeed : 400,
+        singleItem : true,
+        items : 1,
+        navText : ['←','→'],
+        onInitialized  : slider3Counter,
+        onTranslated : slider3Counter
+    });
+
+    function slider3Counter(event) {
+        var element   = event.target;         // DOM element, in this example .owl-carousel
+        var items     = event.item.count;     // Number of items
+        var item      = event.item.index + 1;     // Position of the current item
+
+        // it loop is true then reset counter from 1
+        if(item > items) {
+            item = item - items
+        }
+        $('.slider-counter').html(item+"/"+items)
     }
 
     // смена заголовка страницы по вкладкам на странице structure
@@ -22553,7 +22580,7 @@ $(document).ready(function () {
 
 
     if ($('.similar-articles').length) {
-        var wrapperHeight = document.querySelector('.wrapper').scrollHeight  - document.documentElement.clientHeight - 56;
+        var wrapperHeight = document.querySelector('.wrapper').scrollHeight  - document.documentElement.clientHeight - 88;
 
         $(document).scroll(function(){
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -22570,8 +22597,23 @@ $(document).ready(function () {
 
     $('.grid').masonry({
         // options
-        itemSelector: '.grid-item'
+        itemSelector: '.grid-item',
+        gutter: 24
     });
+
+
+    // вкладка Табличный вид
+    $('#pills-chronology-tab').on('click', function () {
+        setTimeout(function () {
+            $('#pills-chronology').find('.grid').masonry({
+                // options
+                itemSelector: '.grid-item',
+                gutter: 24
+            });
+        },300);
+
+    });
+
 
     $(function () {
         new WOW().init();
@@ -22582,9 +22624,19 @@ $(document).ready(function () {
         $(this).find('.tooltip').addClass('show');
     });
 
-    // показать тултип
+    // спрятать тултип
     $('.tooltip-link .close-tooltip').on('click', function (e) {
         e.stopPropagation();
         $(this).parents('.tooltip').removeClass('show');
+    });
+
+
+    // кнопка Написать  в свернутом виде - клик
+    $('.feedback-button').on('click', function (e) {
+        if ($(this).parents('.contact-block').hasClass('collapsed')) {
+            e.stopPropagation();
+            e.preventDefault();
+            $(this).parents('.contact-block').removeClass('collapsed');
+        }
     });
 });
