@@ -22428,19 +22428,21 @@ $(document).ready(function () {
     $("#owl-slider1").owlCarousel({
         nav : true, // Show next and prev buttons
         dots : true,
-        slideSpeed : 300,
+        slideSpeed : 400,
         paginationSpeed : 400,
+        animateOut : "flipOutX",
+        animateIn : "flipInX",
         singleItem : true,
         items : 1,
         loop : true,
-        navText : ['←','→']
+        navText : ['<i class="fal fa-long-arrow-left"></i>','<i class="fal fa-long-arrow-right"></i>']
     });
 
     $("#owl-slider2").owlCarousel({
         nav : true, // Show next and prev buttons
         dots : false,
-        slideSpeed : 300,
-        paginationSpeed : 400,
+        slideSpeed : 100,
+        paginationSpeed : 100,
         singleItem : true,
         animateIn: 'fadeIn',
         animateOut: 'fadeOut',
@@ -22565,7 +22567,7 @@ $(document).ready(function () {
     });
 
     $('.top-menu-toggler').on('click', function () {
-        $('.top-menu-list').toggleClass('show');
+        $('.top-menu').toggleClass('show');
     });
 
     $('.filters-toggler').on('click', function (e) {
@@ -22578,10 +22580,13 @@ $(document).ready(function () {
         $('select').selectpicker();
     });
 
-
     if ($('.similar-articles').length) {
-        var wrapperHeight = document.querySelector('.wrapper').scrollHeight  - document.documentElement.clientHeight - 88;
+        var wrapperHeight;
 
+        setTimeout(function () {
+            wrapperHeight = document.querySelector('.wrapper').offsetHeight - document.querySelector('.page-read-info').offsetHeight  - document.documentElement.clientHeight;
+        },300);
+        
         $(document).scroll(function(){
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             if (winScroll < wrapperHeight) {
@@ -22593,19 +22598,10 @@ $(document).ready(function () {
         });
     }
 
-
-
-    $('.grid').masonry({
-        // options
-        itemSelector: '.grid-item',
-        gutter: 24
-    });
-
-
     // вкладка Табличный вид
-    $('#pills-chronology-tab').on('click', function () {
+    $('.tabs-header .nav-link, .view-controls-mobile .nav-link').on('click', function () {
         setTimeout(function () {
-            $('#pills-chronology').find('.grid').masonry({
+            $('.tab-pane.active').find('.grid').masonry({
                 // options
                 itemSelector: '.grid-item',
                 gutter: 24
@@ -22614,7 +22610,19 @@ $(document).ready(function () {
 
     });
 
+    // вкладка Карточный вид
+    $('#pills-favorites-tab2').on('click', function () {
+        setTimeout(function () {
+            $('.tab-pane.active').find('.grid').masonry({
+                // options
+                itemSelector: '.grid-item',
+                gutter: 24
+            });
+        },300);
 
+    });
+
+    // красивые появления блоков
     $(function () {
         new WOW().init();
     });
@@ -22639,4 +22647,15 @@ $(document).ready(function () {
             $(this).parents('.contact-block').removeClass('collapsed');
         }
     });
+
+    // Masonry для блоков проектов
+    if ($('.grid').length) {
+        setTimeout(function () {
+            $('.grid').masonry({
+                // options
+                itemSelector: '.grid-item',
+                gutter: 24
+            });
+        }, 300);
+    }
 });
