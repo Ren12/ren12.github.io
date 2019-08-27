@@ -22430,8 +22430,8 @@ $(document).ready(function () {
         dots : true,
         slideSpeed : 400,
         paginationSpeed : 400,
-        animateOut : "flipOutX",
-        animateIn : "flipInX",
+        animateOut : "fadeOutRight",
+        animateIn : "fadeInLeft",
         singleItem : true,
         items : 1,
         loop : true,
@@ -22586,7 +22586,7 @@ $(document).ready(function () {
         setTimeout(function () {
             wrapperHeight = document.querySelector('.wrapper').offsetHeight - document.querySelector('.page-read-info').offsetHeight  - document.documentElement.clientHeight;
         },300);
-        
+
         $(document).scroll(function(){
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             if (winScroll < wrapperHeight) {
