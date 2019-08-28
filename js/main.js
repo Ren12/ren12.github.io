@@ -22559,10 +22559,12 @@ $(document).ready(function () {
     });
 
     $('.mobile-menu-toggler').on('click', function () {
+        $(".mobile-menu").addClass("wow bounceInDown animated");
         $('.mobile-menu').addClass('opened');
     });
 
     $('.mobile-menu__close').on('click', function () {
+        $(".mobile-menu").removeClass("wow bounceInDown animated");
         $('.mobile-menu').removeClass('opened');
     });
 
@@ -22587,6 +22589,27 @@ $(document).ready(function () {
             wrapperHeight = document.querySelector('.wrapper').offsetHeight - document.querySelector('.page-read-info').offsetHeight  - document.documentElement.clientHeight;
         },300);
 
+        (function(){
+
+            // Really basic check for the ios platform
+            // https://stackoverflow.com/questions/9038625/detect-if-device-is-ios
+            var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+            // Get the device pixel ratio
+            var ratio = window.devicePixelRatio || 1;
+
+            // Define the users device screen dimensions
+            var screen = {
+                width : window.screen.width * ratio,
+                height : window.screen.height * ratio
+            };
+
+            // iPhone X Detection
+            if (iOS && screen.width == 1125 && screen.height === 2436) {
+                $('.page-read-info').addClass('big');
+            }
+        })();
+
         $(document).scroll(function(){
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             if (winScroll < wrapperHeight) {
@@ -22596,6 +22619,30 @@ $(document).ready(function () {
             var scrolled = (winScroll / wrapperHeight) * 100;
             $('.page-read-info .timeline').css('width', (scrolled > 100 ? 100 : scrolled) + '%');
         });
+    }
+
+    if ($('.bar').length) {
+        $.fn.isInViewport = function() {
+            var elementTop = $(this).offset().top;
+            var elementBottom = elementTop + $(this).outerHeight();
+            var viewportTop = $(window).scrollTop();
+            var viewportBottom = viewportTop + $(window).height();
+            return elementBottom > viewportTop && elementTop < viewportBottom;
+        };
+
+        $(window).on('resize scroll', function() {
+            $('.bar').each(function () {
+                if ($(this).isInViewport()) {
+                    $(this).addClass('show');
+                    var _this = $(this);
+                    setTimeout(function () {
+                        _this.find('.count').addClass('visible');
+                    }, 1000);
+
+                }
+            });
+        });
+
     }
 
     // вкладка Табличный вид
@@ -22636,6 +22683,17 @@ $(document).ready(function () {
     $('.tooltip-link .close-tooltip').on('click', function (e) {
         e.stopPropagation();
         $(this).parents('.tooltip').removeClass('show');
+    });
+
+    $(document).on('click',function (e) {
+        e.stopPropagation();
+        if (($(e.target).hasClass('tooltip-link') || $(e.target).hasClass('tooltip')) && $('.tooltip').hasClass('show') ) {
+            return
+        }
+        if ($('.tooltip').hasClass('show')) {
+            $('.tooltip').removeClass('show');
+        }
+
     });
 
 
