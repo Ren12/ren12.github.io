@@ -22559,12 +22559,12 @@ $(document).ready(function () {
     });
 
     $('.mobile-menu-toggler').on('click', function () {
-        $(".mobile-menu").addClass("wow bounceInDown animated");
+        $('.circle').addClass('expand');
         $('.mobile-menu').addClass('opened');
     });
 
     $('.mobile-menu__close').on('click', function () {
-        $(".mobile-menu").removeClass("wow bounceInDown animated");
+        $('.circle').removeClass('expand');
         $('.mobile-menu').removeClass('opened');
     });
 
@@ -22716,6 +22716,8 @@ $(document).ready(function () {
             });
         }, 300);
     }
+
+    var myMap = document.querySelector('#mapDiv');
 
     myMap.behaviors.disable('scrollZoom');
 
