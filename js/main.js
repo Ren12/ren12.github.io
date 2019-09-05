@@ -22469,7 +22469,7 @@ $(document).ready(function () {
         }
     }
 
-    if ($("#owl-slider3").length) {
+    if ($(".owl-slider3").length) {
         $(".owl-slider3").owlCarousel({
             nav : true, // Show next and prev buttons
             dots : true,
