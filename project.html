@@ -74,7 +74,7 @@
 
 <div class="wrapper">
     <section>
-        <div class="container px-0">
+        <div class="container page-card-container">
             <div class="page-card mb-64 mb-md-24">
                 <div class="image-block"></div>
                 <div class="info">
@@ -214,26 +214,28 @@
                 </div>
                 <div class="col-lg-7 order-lg-1 mb-md-40 order-lg-1">
                     <div class="scheme">
-                        <div class="layer red"></div>
-                        <div class="layer yellow"></div>
-                        <div class="layer gray"></div>
+                        <img class="static-bg" src="img/Жилье_001.png" alt="">
+                        <img class="layer layer1 show" src="img/Жилье_002.png" alt="">
+                        <img class="layer layer2" src="img/Жилье_003-01.png" alt="">
+                        <img class="layer layer3" src="img/Жилье_004-01.png" alt="">
+                        <img class="layer layer4" src="img/Жилье_005-01.png" alt="">
                     </div>
                 </div>
             </div>
             <div class="scheme-controls mb-56 mt-16">
-                <div class="control orange">
+                <div class="control active" data-control="layer1">
                     <i class="icon icon-new-construction"></i>
                     <div class="control-label">Существующая многоквартирная застройка</div>
                 </div>
-                <div class="control yellow">
+                <div class="control" data-control="layer2">
                     <i class="icon icon-apartment"></i>
                     <div class="control-label">Территории, допускающие жилую застройку</div>
                 </div>
-                <div class="control gray">
+                <div class="control" data-control="layer3">
                     <i class="icon icon-home"></i>
                     <div class="control-label">Cуществующая малоэтажная жилая застройка</div>
                 </div>
-                <div class="control gray">
+                <div class="control" data-control="layer4">
                     <i class="icon icon-eco-home"></i>
                     <div class="control-label">Cуществующая дачная застройка</div>
                 </div>
@@ -284,27 +286,30 @@
                     <p>За свою более чем пятисотлетнюю историю она успела сменить несколько наименований. С топонимической точки зрения улица примечательна тем, что ее былые названия отсылали к диаметрально противоположным образам православной культуры: Чертольская – от слова «черт», а Пречистенка – по иконе Пречистой Божией Матери Смоленской.</p>
                 </div>
                 <div class="col-lg-7 mb-md-40">
-                    <div class="scheme transport">
-                        <div class="layer red"></div>
-                        <div class="layer gray"></div>
+                    <div class="scheme">
+                        <img class="static-bg" src="img/Функ_зоны_001.png" alt="">
+                        <img class="layer layer5 show" src="img/Функ_зоны_002.png" alt="">
+                        <img class="layer layer6" src="img/Функ_зоны_003.png" alt="">
+                        <img class="layer layer7" src="img/Функ_зоны_004.png" alt="">
+                        <img class="layer layer8" src="img/Функ_зоны_005.png" alt="">
                     </div>
                 </div>
             </div>
 
             <div class="scheme-controls mb-56">
-                <div class="control red">
+                <div class="control active" data-control="layer5">
                     <i class="icon icon-light-traffic"></i>
                     <div class="control-label">Ремонт и строительство новых дорог</div>
                 </div>
-                <div class="control gray">
+                <div class="control" data-control="layer6">
                     <i class="icon icon-bus-front-10"></i>
                     <div class="control-label">Маршруты наземного транспорта</div>
                 </div>
-                <div class="control gray">
+                <div class="control" data-control="layer7">
                     <i class="icon icon-train"></i>
                     <div class="control-label">Линии скоростного трамвая</div>
                 </div>
-                <div class="control gray">
+                <div class="control" data-control="layer8">
                     <i class="icon icon-train-speed"></i>
                     <div class="control-label">Линии метрополитена</div>
                 </div>
