@@ -22551,7 +22551,7 @@ $(document).ready(function () {
         }
     });
 
-    // закрытие блока с инофрмацией о куках
+    // закрытие блока с информацией о куках
     $('.close-block').on('click', function () {
        $(this).parents('.cookies-block').hide();
     });
@@ -22570,6 +22570,7 @@ $(document).ready(function () {
         }
     });
 
+    // управление мобильным меню
     $('.mobile-menu-toggler').on('click', function () {
         $('.circle').addClass('expand');
         $('.mobile-menu').addClass('opened');
@@ -22596,6 +22597,7 @@ $(document).ready(function () {
         $('select').selectpicker();
     });
 
+    // Скрипты для страницы Статья
     if ($('.similar-articles').length) {
         var wrapperHeight;
         var $wrapper = document.querySelector('.wrapper');
@@ -22656,6 +22658,7 @@ $(document).ready(function () {
         });
     }
 
+    // Появление столбцов диаграмы на стр Проекта
     if ($('.bar').length) {
         $.fn.isInViewport = function() {
             var elementTop = $(this).offset().top;
@@ -22719,7 +22722,6 @@ $(document).ready(function () {
     });
 
     // Masonry для блоков проектов
-
     if ($('.grid').length) {
         $grid = $('.grid');
         $grid.imagesLoaded(function(){
@@ -22732,7 +22734,7 @@ $(document).ready(function () {
     }
 
 
-
+    // Переопределение поведения карты на странице Контакты
     if ($('#mapDiv').length) {
         var myMap = document.querySelector('#mapDiv');
 
@@ -22778,7 +22780,7 @@ $(document).ready(function () {
         });
     }
 
-    // верхний поиск - ддесктоп
+    // верхний поиск - десктоп
     $('.header-search .icon-zoom').on('click', function () {
         $('.header-search').addClass('show');
         $('.header-search input').focus();
