@@ -60,26 +60,37 @@
                 <a href="#">Документы отдела кадров</a>
             </div>
             <h1 class="portal-title">Телефонный справочник</h1>
-            <div class="d-flex justify-content-end mb-24">
+            <div class="custom-search custom-search-mobile mb-24">
+                <i class="icon icon-search"></i>
+                <input type="text" placeholder="Поиск по имени">
+            </div>
+            <div class="d-flex justify-content-lg-end justify-content-sm-start mb-24">
                 <ul class="nav nav-pills icon-pills">
                     <li>
-                        <a class="nav-link" id="pills-favorites-tab1" data-toggle="pill" href="#pills-1" role="tab" aria-controls="pills-1" aria-selected="true">
-                            <img src="img/portal/polaroid-portrait.svg" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link active" id="pills-table-tab2" data-toggle="pill" href="#pills-2" role="tab" aria-controls="pills-2" aria-selected="false">
+                        <a class="nav-link active"
+                           id="pills-table-tab1"
+                           data-toggle="pill"
+                           href="#pills-1"
+                           role="tab"
+                           aria-controls="pills-1"
+                           aria-selected="false">
                             <img src="img/portal/layout-25.svg" alt="">
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" id="pills-table-tab3" data-toggle="pill" href="#pills-3" role="tab" aria-controls="pills-3" aria-selected="false">
+                        <a class="nav-link"
+                           id="pills-table-tab2"
+                           data-toggle="pill"
+                           href="#pills-2"
+                           role="tab"
+                           aria-controls="pills-2"
+                           aria-selected="false">
                             <img src="img/portal/hierarchy-56.svg" alt="">
                         </a>
                     </li>
                 </ul>
             </div>
-            <div class="row">
+            <div class="row d-none d-lg-flex d-md-flex">
                 <div class="col-lg-6 col-md-6 mb-32">
                     <div class="custom-search">
                         <i class="icon icon-search"></i>
@@ -109,77 +120,199 @@
     <section>
         <div class="container">
             <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab"></div>
-                <div class="tab-pane fade show active" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
+                <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab">
                     <div class="table">
-                        <div class="table-head">
+                        <div class="table-head d-none d-lg-flex d-md-flex">
                             <div class="col-name">Имя</div>
                             <div class="col-email">Email</div>
                             <div class="col-phone">Телефон</div>
                             <div class="col-cabinet">Кабинет</div>
-                            <div class="col-address">Адрес</div>
+                            <div class="col-address text-right">Отдел</div>
                         </div>
                         <div class="table-body">
                             <div class="table-row">
                                 <div class="col-name">
-                                    <img src="img/portal/pic1.png" alt="">
-                                    <div class="name">Гук Татьяна Николаевна</div>
+                                    <div class="d-flex align-items-center">
+                                        <img src="img/portal/pic1.png" alt="">
+                                        <div>
+                                            <div class="name">Гук Татьяна Николаевна</div>
+                                            <div class="position">Директор института</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mobile-table-info">
+                                        <div class="d-flex justify-content-between mb-16">
+                                            <div class="gray-text">Email</div>
+                                            <a href="#">tnguk@genplanmos.ru</a>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-16">
+                                            <div class="gray-text">Телефон</div>
+                                            <div>414</div>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-16">
+                                            <div class="gray-text">Кабинет</div>
+                                            <div>310</div>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <div class="gray-text">Отдел</div>
+                                            <a href="#">Руководство</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-email"><a class="blue-link" href="mailto:tnguk@genplanmos.ru">tnguk@genplanmos.ru</a>
+                                <div class="col-email d-none d-lg-block d-md-block"><a class="blue-link" href="mailto:tnguk@genplanmos.ru">tnguk@genplanmos.ru</a>
                                 </div>
-                                <div class="col-phone">414</div>
-                                <div class="col-cabinet">310</div>
-                                <div class="col-address text-right">2-я Брестская улица, дом 2/14</div>
+                                <div class="col-phone d-none d-lg-block d-md-block">414</div>
+                                <div class="col-cabinet d-none d-lg-block d-md-block">310</div>
+                                <div class="col-address text-right d-none d-lg-block d-md-block"><a href="#">Руководство</a></div>
                             </div>
                             <div class="table-row">
                                 <div class="col-name">
-                                    <img src="img/portal/pic2.png" alt="">
-                                    <div class="name">Константин Константинович Константинопольский</div>
+                                    <div class="d-flex align-items-center">
+                                        <img src="img/portal/pic2.png" alt="">
+                                        <div>
+                                            <div class="name">Константин Константинович Константинопольский</div>
+                                            <div class="position">Первый заместитель директора</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mobile-table-info">
+                                        <div class="d-flex justify-content-between mb-16">
+                                            <div class="gray-text">Email</div>
+                                            <a href="#">tnguk@genplanmos.ru</a>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-16">
+                                            <div class="gray-text">Телефон</div>
+                                            <div>414</div>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-16">
+                                            <div class="gray-text">Кабинет</div>
+                                            <div>310</div>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <div class="gray-text">Отдел</div>
+                                            <a href="#">Руководство</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-email"><a class="blue-link" href="mailto:tnguk@genplanmos.ru">tnguk@genplanmos.ru</a>
+                                <div class="col-email d-none d-lg-block d-md-block"><a class="blue-link" href="mailto:tnguk@genplanmos.ru">tnguk@genplanmos.ru</a>
                                 </div>
-                                <div class="col-phone">414</div>
-                                <div class="col-cabinet">310</div>
-                                <div class="col-address text-right">2-я Брестская улица, дом 2/14</div>
+                                <div class="col-phone d-none d-lg-block d-md-block">414</div>
+                                <div class="col-cabinet d-none d-lg-block d-md-block">310</div>
+                                <div class="col-address text-right d-none d-lg-block d-md-block"><a href="#">Руководство</a></div>
                             </div>
                             <div class="table-row">
                                 <div class="col-name">
-                                    <img src="img/portal/pic3.png" alt="">
-                                    <div class="name">Константин Константинович Константинопольский</div>
+                                    <div class="d-flex align-items-center">
+                                        <img src="img/portal/pic3.png" alt="">
+                                        <div>
+                                            <div class="name">Константин Константинович Константинопольский</div>
+                                            <div class="position">Первый заместитель директора</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mobile-table-info">
+                                        <div class="d-flex justify-content-between mb-16">
+                                            <div class="gray-text">Email</div>
+                                            <a href="#">tnguk@genplanmos.ru</a>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-16">
+                                            <div class="gray-text">Телефон</div>
+                                            <div>414</div>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-16">
+                                            <div class="gray-text">Кабинет</div>
+                                            <div>310</div>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <div class="gray-text">Отдел</div>
+                                            <a href="#">Руководство</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-email"><a class="blue-link" href="mailto:tnguk@genplanmos.ru">tnguk@genplanmos.ru</a>
+                                <div class="col-email d-none d-lg-block d-md-block"><a class="blue-link" href="mailto:tnguk@genplanmos.ru">tnguk@genplanmos.ru</a>
                                 </div>
-                                <div class="col-phone">414</div>
-                                <div class="col-cabinet">310</div>
-                                <div class="col-address text-right">2-я Брестская улица, дом 2/14</div>
+                                <div class="col-phone d-none d-lg-block d-md-block">414</div>
+                                <div class="col-cabinet d-none d-lg-block d-md-block">310</div>
+                                <div class="col-address text-right d-none d-lg-block d-md-block"><a href="#">Руководство</a></div>
                             </div>
                             <div class="table-row">
                                 <div class="col-name">
-                                    <img src="img/portal/pic4.png" alt="">
-                                    <div class="name">Константин Константинович Константинопольский</div>
+                                    <div class="d-flex align-items-center">
+                                        <img src="img/portal/pic4.png" alt="">
+                                        <div>
+                                            <div class="name">Константин Константинович Константинопольский</div>
+                                            <div class="position">Первый заместитель директора</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mobile-table-info">
+                                        <div class="d-flex justify-content-between mb-16">
+                                            <div class="gray-text">Email</div>
+                                            <a href="#">tnguk@genplanmos.ru</a>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-16">
+                                            <div class="gray-text">Телефон</div>
+                                            <div>414</div>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-16">
+                                            <div class="gray-text">Кабинет</div>
+                                            <div>310</div>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <div class="gray-text">Отдел</div>
+                                            <a href="#">Руководство</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-email"><a class="blue-link" href="mailto:tnguk@genplanmos.ru">tnguk@genplanmos.ru</a>
+                                <div class="col-email d-none d-lg-block d-md-block"><a class="blue-link" href="mailto:tnguk@genplanmos.ru">tnguk@genplanmos.ru</a>
                                 </div>
-                                <div class="col-phone">414</div>
-                                <div class="col-cabinet">310</div>
-                                <div class="col-address text-right">2-я Брестская улица, дом 2/14</div>
+                                <div class="col-phone d-none d-lg-block d-md-block">414</div>
+                                <div class="col-cabinet d-none d-lg-block d-md-block">310</div>
+                                <div class="col-address text-right d-none d-lg-block d-md-block"><a href="#">Научно-проектное объединение охраны
+                                    окружающей среды, развития зеленого фонда и ландшафтного проектирования (НПО
+                                    "Экология")</a></div>
                             </div>
                             <div class="table-row">
                                 <div class="col-name">
-                                    <img src="img/portal/pic5.png" alt="">
-                                    <div class="name">Константин Константинович Константинопольский</div>
+                                    <div class="d-flex align-items-center">
+                                        <img src="img/portal/pic5.png" alt="">
+                                        <div>
+                                            <div class="name">Константин Константинович Константинопольский</div>
+                                            <div class="position">Первый заместитель директора</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mobile-table-info">
+                                        <div class="d-flex justify-content-between mb-16">
+                                            <div class="gray-text">Email</div>
+                                            <a href="#">tnguk@genplanmos.ru</a>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-16">
+                                            <div class="gray-text">Телефон</div>
+                                            <div>414</div>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-16">
+                                            <div class="gray-text">Кабинет</div>
+                                            <div>310</div>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <div class="gray-text">Отдел</div>
+                                            <a href="#">Руководство</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-email"><a class="blue-link" href="mailto:tnguk@genplanmos.ru">tnguk@genplanmos.ru</a>
+                                <div class="col-email d-none d-lg-block d-md-block"><a class="blue-link" href="mailto:tnguk@genplanmos.ru">tnguk@genplanmos.ru</a>
                                 </div>
-                                <div class="col-phone">414</div>
-                                <div class="col-cabinet">310</div>
-                                <div class="col-address text-right">2-я Брестская улица, дом 2/14</div>
+                                <div class="col-phone d-none d-lg-block d-md-block">414</div>
+                                <div class="col-cabinet d-none d-lg-block d-md-block">310</div>
+                                <div class="col-address text-right d-none d-lg-block d-md-block"><a href="#">Научно-проектное объединение экономики
+                                    градостроительства и стратегических разработок</a></div>
                             </div>
 
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3-tab">
+                <div class="tab-pane fade" id="pills-2" role="tabpane2" aria-labelledby="pills-2-tab">
                     <div class="row">
                         <div class="col-lg-10 col-md-10 offset-lg-1 offset-md-1">
                             <div class="scheme mt-32">
@@ -203,7 +336,8 @@
                                             <div class="scheme-block d-flex">
                                                 <img src="img/portal/pic3.png" alt="">
                                                 <div>
-                                                    <div class="name">Константин Константинович Константинопольский</div>
+                                                    <div class="name">Константин Константинович Константинопольский
+                                                    </div>
                                                     <div class="position">Директор института</div>
                                                 </div>
                                             </div>
@@ -217,10 +351,13 @@
                                         <div class="department">Первый отдел</div>
                                     </div>
                                     <div class="scheme-block mb-16">
-                                        <div class="department">Отдел организации мобилизационный подготовки и гражданской обороны</div>
+                                        <div class="department">Отдел организации мобилизационный подготовки и
+                                            гражданской обороны
+                                        </div>
                                     </div>
                                     <div class="scheme-block mb-16">
-                                        <div class="department">Управление координации производственной деятельности</div>
+                                        <div class="department">Управление координации производственной деятельности
+                                        </div>
                                     </div>
                                     <div class="scheme-block mb-16">
                                         <div class="department">Отедел маркетинга</div>
