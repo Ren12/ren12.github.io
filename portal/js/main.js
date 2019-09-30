@@ -21424,6 +21424,9 @@ $(document).ready(function () {
         if (_this.parents('.scheme-item').is(':last-child')) return;
         var $childList = _this.parents('.scheme-item').next('.scheme-item').find('.departments-list');
         _this.siblings('.scheme-block').removeClass('opened');
+        if (_this.hasClass('person-block')) {
+            _this.parents('.scheme-item').siblings('.scheme-item').find('.departments-list').removeClass('show');
+        }
         $('.departments-list').find('.scheme-block').removeClass('opened');
         $('.departments-list').removeClass('unselect');
         _this.toggleClass('opened');
