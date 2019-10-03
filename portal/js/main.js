@@ -21417,66 +21417,80 @@ $(document).ready(function () {
         } else {
            $schemeBlock.addClass('show');
         }
+        if ($schemeBlock.hasClass('opened')) {
+            $schemeBlock.removeClass('opened');
+            $schemeBlock.trigger('click');
+        }
+
     });
 
     $('.scheme-block').on('click', function () {
+
         var _this = $(this);
         if (_this.parents('.scheme-item').is(':last-child')) return;
+
         var $childList = _this.parents('.scheme-item').next('.scheme-item').find('.departments-list');
+        var $firstInChildList = $childList.find('.scheme-block:first');
+        var $lastInChildList = $childList.find('.scheme-block:last');
+
+        var topChild = $firstInChildList.offset().top + ($firstInChildList.outerHeight()/2) - $firstInChildList.parent().offset().top;
+        var bottomChild = $lastInChildList.offset().top + ($lastInChildList.outerHeight()/2) - $lastInChildList.parent().offset().top;
+
+        var thisTop = _this.offset().top + (_this.outerHeight()/2) - _this.parent().offset().top;
+
+        var childLineHeight;
+        var currentLineHeight;
+
+        var top1;
+        var top2;
+
+        if (_this.parents('.scheme-item').is(':last-child')) return;
+
         _this.siblings('.scheme-block').removeClass('opened');
         if (_this.hasClass('person-block')) {
             _this.parents('.scheme-item').siblings('.scheme-item').find('.departments-list').removeClass('show');
         }
+
         $('.departments-list').find('.scheme-block').removeClass('opened');
         $('.departments-list').removeClass('unselect');
+
         _this.toggleClass('opened');
+
         if (_this.hasClass('opened')) {
-            $childList.addClass('show');
-
-            setTimeout(function () {
-                var top = $childList.find('.scheme-block:first').outerHeight()/2;
-                var bottom = $childList.find('.scheme-block:last').outerHeight()/2;
-                var lineHeight = $childList.outerHeight() - top - bottom;
-
-                if (_this.is(':first-child') && _this.outerHeight() < $childList.find('.scheme-block:first').outerHeight()) {
-                    top = _this.outerHeight()/2;
-                    lineHeight = lineHeight + (($childList.find('.scheme-block:first').outerHeight()/2) - top);
-                }
-
-                if (_this.parents('.departments-list').outerHeight() > $childList.outerHeight() && _this.is(':last-child')) {
-                    bottom = _this.outerHeight()/2;
-                    lineHeight = _this.parents('.departments-list').outerHeight() - top - bottom;
-                }
-
-                if (!_this.hasClass('person-block')) {
-                    _this.parents('.departments-list').addClass('unselect');
-                    var currentTop = _this.offset().top + (_this.outerHeight()/2) - _this.parent().offset().top;
-                    var personBlockTop = $('.person-block.opened').offset().top + ($('.person-block.opened').outerHeight()/2) - $('.person-block.opened').parent().offset().top;
-                    if (currentTop < personBlockTop) {
-                        var currentLineTop = currentTop;
-                        var currentLineHeight = Math.abs(personBlockTop - currentTop);
-                    } else {
-                        currentLineTop = personBlockTop;
-                        currentLineHeight = Math.abs(currentTop - personBlockTop);
-                    }
-
-                    console.log(currentLineHeight);
-
-                    _this.parents('.departments-list').find('.connecting-line').css('top', currentLineTop + 'px');
-                    _this.parents('.departments-list').find('.connecting-line').css('height', currentLineHeight + 'px');
-                }
-
-                $childList.find('.connecting-line').css('height', lineHeight + 'px');
-                $childList.find('.connecting-line').css('top', top + 'px');
-            }, 50);
-        } else {
             if (_this.hasClass('person-block')) {
-                _this.parents('.scheme-item').siblings('.scheme-item').find('.departments-list').removeClass('show');
-                _this.parents('.scheme-item').siblings('.scheme-item').find('.departments-list').removeClass('unselect');
-                _this.parents('.scheme-item').siblings('.scheme-item').find('.scheme-block').removeClass('opened');
+                childLineHeight = thisTop < bottomChild ? Math.abs(bottomChild - topChild) : thisTop - topChild;
+                $childList.find('.connecting-line').css('height', childLineHeight + 'px');
+                $childList.find('.connecting-line').css('top', topChild + 'px');
+                $childList.addClass('show');
+
             } else {
-                $childList.removeClass('show');
+                _this.parents('.departments-list').addClass('unselect');
+                var $personBlockOpened = _this.parents('.scheme-item').siblings('.scheme-item').find('.person-block.opened');
+                var topPerson = $personBlockOpened.offset().top + ($personBlockOpened.outerHeight()/2) - $personBlockOpened.parent().offset().top;
+
+                childLineHeight = Math.abs(topChild - thisTop);
+
+                $childList.addClass('show');
+
+                top1 = thisTop < topPerson ? thisTop : topPerson;
+                currentLineHeight = thisTop < topPerson ? topPerson - thisTop : thisTop - topPerson;
+
+                _this.parents('.departments-list').find('.connecting-line').css('top', top1 + 'px');
+                _this.parents('.departments-list').find('.connecting-line').css('height', currentLineHeight + 'px');
+
+                top2 = thisTop < topChild ? thisTop : topChild;
+                childLineHeight = thisTop < bottomChild ? (childLineHeight + (bottomChild - thisTop)) : childLineHeight;
+                childLineHeight = thisTop < topChild ? childLineHeight - (topChild - thisTop) : childLineHeight;
+
+                $childList.find('.connecting-line').css('top', top2 + 'px');
+                $childList.find('.connecting-line').css('height', childLineHeight + 'px');
             }
+        } else {
+            _this.parents('.scheme-item').siblings('.scheme-item').find('.departments-list').removeClass('show');
+            _this.parents('.scheme-item').siblings('.scheme-item').find('.departments-list').removeClass('unselect');
+            _this.parents('.scheme-item').siblings('.scheme-item').find('.scheme-block:not(.person-block)').removeClass('opened');
         }
+
     });
+
 });
