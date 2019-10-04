@@ -21427,7 +21427,7 @@ $(document).ready(function () {
     $('.scheme-block').on('click', function () {
 
         var _this = $(this);
-        if (_this.parents('.scheme-item').is(':last-child')) return;
+        if (_this.parents('.scheme-item').is(':last-child') || _this.parent().hasClass('people-list')) return;
 
         var $childList = _this.parents('.scheme-item').next('.scheme-item').find('.departments-list');
         var $firstInChildList = $childList.find('.scheme-block:first');
@@ -21453,6 +21453,7 @@ $(document).ready(function () {
 
         $('.departments-list').find('.scheme-block').removeClass('opened');
         $('.departments-list').removeClass('unselect');
+        $('.people-list').removeClass('show');
 
         _this.toggleClass('opened');
 
@@ -21471,6 +21472,7 @@ $(document).ready(function () {
                 childLineHeight = Math.abs(topChild - thisTop);
 
                 $childList.addClass('show');
+                _this.parents('.scheme-item').find('.people-list').addClass('show');
 
                 top1 = thisTop < topPerson ? thisTop : topPerson;
                 currentLineHeight = thisTop < topPerson ? topPerson - thisTop : thisTop - topPerson;
