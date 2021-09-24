@@ -125,6 +125,14 @@ dfn {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0; }
+
 h1 {
   font-size: 2em;
   margin: 0.67em 0; }
@@ -372,7 +380,7 @@ textarea {
 header {
   position: fixed;
   top: 0;
-  padding: 16px 0;
+  padding: 1rem 0;
   left: 0;
   background: #F5F5F5;
   width: 100%;
@@ -385,12 +393,24 @@ header {
   z-index: 3; }
   header .open-menu {
     position: absolute;
-    right: 64px;
-    top: 20px;
-    width: 24px;
-    height: 24px;
+    right: 4rem;
+    top: 1.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
     cursor: pointer; }
     header .open-menu img {
+      -o-object-fit: cover;
+      object-fit: cover;
+      width: 100%;
+      height: 100%; }
+  header .go-back {
+    position: absolute;
+    left: 4rem;
+    top: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer; }
+    header .go-back img {
       -o-object-fit: cover;
       object-fit: cover;
       width: 100%;
@@ -405,13 +425,13 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 126px 0;
+  padding: 7.875rem 0;
   color: #fff;
   background-color: #211F28;
   z-index: 4; }
   .menu__header {
     position: absolute;
-    top: 16px;
+    top: 1rem;
     left: 0;
     width: 100%;
     display: -webkit-box;
@@ -435,13 +455,13 @@ header {
         text-transform: uppercase; }
       .menu__header .company-info .description {
         font-size: 0.875rem;
-        margin-left: 12px; }
+        margin-left: 0.75rem; }
     .menu__header .close-menu {
       position: absolute;
-      right: 64px;
-      top: 6px;
-      width: 24px;
-      height: 24px;
+      right: 4rem;
+      top: 0.375rem;
+      width: 1.5rem;
+      height: 1.5rem;
       cursor: pointer; }
       .menu__header .close-menu img {
         -o-object-fit: cover;
@@ -452,7 +472,7 @@ header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    max-width: 960px;
+    max-width: 60rem;
     margin: auto;
     height: 100%;
     -webkit-box-flex: 1;
@@ -484,13 +504,13 @@ header {
           width: max-content;
           font-weight: 300;
           font-size: 3rem;
-          line-height: 69px;
+          line-height: 4.3125rem;
           color: rgba(255, 255, 255, 0.5);
-          margin-bottom: 32px; }
+          margin-bottom: 2rem; }
           .menu__body_left nav a:hover, .menu__body_left nav a:active {
             color: #fff;
             border-bottom: 2px solid #fff;
-            margin-bottom: 30px; }
+            margin-bottom: 1.875rem; }
     .menu__body_right {
       width: 50%;
       -webkit-box-flex: 0;
@@ -509,69 +529,22 @@ header {
   .menu__contacts-city {
     font-weight: 300;
     font-size: 1.25rem;
-    line-height: 29px;
-    margin-bottom: 12px; }
+    line-height: 1.8125rem;
+    margin-bottom: 0.75rem; }
   .menu__contacts-phone {
     display: block;
     font-weight: 600;
     font-size: 1.5rem;
-    line-height: 24px;
-    margin-bottom: 56px; }
+    line-height: 1.5rem;
+    margin-bottom: 3.5rem; }
   .menu.opened {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
 
-.slider .slide {
-  position: relative;
-  -webkit-clip-path: polygon(12.5rem 0, 100% 0%, calc(100% - 12.5rem) 100%, 0% 100%);
-  clip-path: polygon(12.5rem 0, 100% 0%, calc(100% - 12.5rem) 100%, 0% 100%);
-  height: calc(100vh - 8rem);
-  width: calc(100vw - 36.5rem);
-  min-width: 52.875rem;
-  max-width: 68.75rem;
-  opacity: 0.5; }
-  .slider .slide video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-    -o-object-fit: cover;
-    object-fit: cover; }
-  .slider .slide:first-child ~ .slide {
-    margin-left: -10rem; }
-  .slider .slide h2 {
-    font-weight: 800;
-    font-size: 4.2rem;
-    line-height: 5.063rem;
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: calc(100% - 25rem);
-    text-align: center;
-    margin: auto;
-    color: #FFFFFF;
-    opacity: 0.4; }
-  .slider .slide.slick-current {
-    opacity: 1; }
-    .slider .slide.slick-current h2 {
-      opacity: 1; }
-  .slider .slide a {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 3; }
-
 footer {
-  min-height: 440px;
-  padding: 62px 0 114px;
+  min-height: 27.5rem;
+  padding: 3.875rem 0 7.125rem;
   background-color: #211F28;
   width: 100%;
   color: #fff;
@@ -599,30 +572,32 @@ footer {
     font-weight: 800;
     font-size: 4.2rem;
     line-height: 5.063rem;
-    margin: 0 0 20px; }
+    margin: 0 0 1.25rem;
+    text-align: left;
+    color: #fff; }
   footer .email-link {
     display: block;
-    font-size: 48px;
+    font-size: 3rem;
     letter-spacing: 0.03em;
-    margin-bottom: 90px; }
+    margin-bottom: 5.625rem; }
   footer .phones-list__item:first-child {
-    margin-bottom: 32px; }
+    margin-bottom: 2rem; }
   footer .phones-list__item .city {
     font-weight: 300;
-    font-size: 20px;
-    margin-bottom: 12px; }
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem; }
   footer .phones-list__item .phone {
     font-weight: 600;
-    font-size: 24px;
+    font-size: 1.5rem;
     letter-spacing: 0.03em; }
   footer .rounded-block {
     position: absolute;
     right: 0;
-    bottom: -114px;
-    width: calc(40% + 64px);
-    height: 354px;
+    bottom: -7.125rem;
+    width: calc(40% + 4rem);
+    height: 22.125rem;
     background-color: #F8F4F9;
-    border-radius: 177px 0 0 0;
+    border-radius: 11.0625rem 0 0 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -641,13 +616,22 @@ button,
   font-size: 0.875rem;
   text-align: center;
   color: #282B31;
-  height: 44px;
-  line-height: 46px;
-  border-radius: 64px;
-  padding: 0 40px; }
+  height: 2.75rem;
+  line-height: 2.6875rem;
+  border-radius: 4rem;
+  padding: 0 2.5rem; }
 
 html {
   font-size: 16px; }
+  @media screen and (min-width: 1000px) and (max-width: 1920px) {
+    html {
+      font-size: 14px; } }
+  @media screen and (min-width: 1920px) and (max-width: 2000px) {
+    html {
+      font-size: 20px; } }
+  @media screen and (min-width: 2000px) and (max-width: 3000px) {
+    html {
+      font-size: 24px; } }
 
 body {
   font-family: 'Jost', sans-serif;
@@ -672,25 +656,25 @@ a {
 
 .wrapper {
   background: #F5F5F5;
-  padding-top: 68px; }
+  padding-top: 4.25rem; }
 
 .container {
   position: relative;
-  padding: 0 64px;
+  padding: 0 4rem;
   margin: 0 auto;
   max-width: 100%; }
 
 .clip-1 {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 202px 100%, 202px calc(100% - 242px), 0% calc(100% - 242px));
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 202px 100%, 202px calc(100% - 242px), 0% calc(100% - 242px)); }
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 12.625rem 100%, 12.625rem calc(100% - 15.125rem), 0% calc(100% - 15.125rem));
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 12.625rem 100%, 12.625rem calc(100% - 15.125rem), 0% calc(100% - 15.125rem)); }
 
 .clip-2 {
-  -webkit-clip-path: polygon(0 0, calc(100% - 200px) 0, calc(100% - 200px) 66px, 100% 66px, 100% calc(100% - 294px), calc(100% - 110px) calc(100% - 294px), calc(100% - 110px) 100%, 0 100%);
-  clip-path: polygon(0 0, calc(100% - 200px) 0, calc(100% - 200px) 66px, 100% 66px, 100% calc(100% - 294px), calc(100% - 110px) calc(100% - 294px), calc(100% - 110px) 100%, 0 100%); }
+  -webkit-clip-path: polygon(0 0, calc(100% - 12.5rem) 0, calc(100% - 12.5rem) 4.125rem, 100% 4.125rem, 100% calc(100% - 18.375rem), calc(100% - 6.875rem) calc(100% - 18.375rem), calc(100% - 6.875rem) 100%, 0 100%);
+  clip-path: polygon(0 0, calc(100% - 12.5rem) 0, calc(100% - 12.5rem) 4.125rem, 100% 4.125rem, 100% calc(100% - 18.375rem), calc(100% - 6.875rem) calc(100% - 18.375rem), calc(100% - 6.875rem) 100%, 0 100%); }
 
 .clip-3 {
-  -webkit-clip-path: polygon(0 0, calc(100% - 200px) 0, calc(100% - 200px) 75px, 100% 75px, 100% calc(100% - 75px), calc(100% - 200px) calc(100% - 75px), calc(100% - 200px) 100%, 0 100%);
-  clip-path: polygon(0 0, calc(100% - 200px) 0, calc(100% - 200px) 75px, 100% 75px, 100% calc(100% - 75px), calc(100% - 200px) calc(100% - 75px), calc(100% - 200px) 100%, 0 100%); }
+  -webkit-clip-path: polygon(0 0, calc(100% - 12.5rem) 0, calc(100% - 12.5rem) 4.6875rem, 100% 4.6875rem, 100% calc(100% - 4.6875rem), calc(100% - 12.5rem) calc(100% - 4.6875rem), calc(100% - 12.5rem) 100%, 0 100%);
+  clip-path: polygon(0 0, calc(100% - 12.5rem) 0, calc(100% - 12.5rem) 4.6875rem, 100% 4.6875rem, 100% calc(100% - 4.6875rem), calc(100% - 12.5rem) calc(100% - 4.6875rem), calc(100% - 12.5rem) 100%, 0 100%); }
 
 .company-info {
   display: -webkit-box;
@@ -707,7 +691,7 @@ a {
     text-transform: uppercase; }
   .company-info .description {
     font-size: 0.875rem;
-    margin-left: 12px; }
+    margin-left: 0.75rem; }
 
 .top-image {
   position: relative;
@@ -721,7 +705,7 @@ a {
   -ms-flex-pack: center;
   justify-content: center;
   margin: auto;
-  height: 534px; }
+  height: 33.375rem; }
   .top-image img {
     position: absolute;
     top: 0;
@@ -744,4 +728,60 @@ a {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-bottom: 96px; }
+  margin-bottom: 6rem; }
+
+.section-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  min-height: 53.125rem;
+  margin-bottom: 4rem; }
+  .section-info__left {
+    color: #000;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    padding-left: 12.5rem;
+    padding-right: 7.5rem;
+    padding-top: 38rem;
+    width: 50%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .section-info__right {
+    font-weight: 300;
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+    padding-top: 38rem;
+    padding-left: 5.5rem;
+    padding-right: 7.5rem;
+    width: 50%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+
+.gray-bg {
+  background-color: #EBE9E6; }
