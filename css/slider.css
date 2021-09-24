@@ -2,7 +2,7 @@ header .go-back {
   display: none; }
 
 .slider {
-  padding-bottom: 4.25rem; }
+  padding-bottom: 3.6rem; }
   .slider .slide {
     position: relative;
     -webkit-clip-path: polygon(12.5rem 0, 100% 0%, calc(100% - 12.5rem) 100%, 0% 100%);
@@ -11,7 +11,10 @@ header .go-back {
     width: calc(100vw - 36.5rem);
     min-width: 52.875rem;
     max-width: 68.75rem;
-    opacity: 0.5; }
+    opacity: 0.5;
+    -webkit-transition: opacity 0.25s linear;
+    -o-transition: opacity 0.25s linear;
+    transition: opacity 0.25s linear; }
     .slider .slide video {
       position: absolute;
       top: 0;
@@ -38,10 +41,19 @@ header .go-back {
       text-align: center;
       margin: auto;
       color: #FFFFFF;
-      opacity: 0.4; }
+      opacity: 0.4;
+      -webkit-transition: opacity 3s linear;
+      -o-transition: opacity 3s linear;
+      transition: opacity 3s linear; }
     .slider .slide.slick-current {
+      -webkit-transition: opacity 0.25s linear;
+      -o-transition: opacity 0.25s linear;
+      transition: opacity 0.25s linear;
       opacity: 1; }
       .slider .slide.slick-current h2 {
+        -webkit-transition: opacity 3s linear;
+        -o-transition: opacity 3s linear;
+        transition: opacity 3s linear;
         opacity: 1; }
     .slider .slide a {
       display: block;
