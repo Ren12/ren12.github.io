@@ -1498,6 +1498,9 @@ header {
     width: 1.5rem;
     height: 1.5rem;
     cursor: pointer; }
+    @media screen and (max-width: 768px) {
+      header .open-menu {
+        right: 1rem; } }
     header .open-menu img {
       -o-object-fit: cover;
       object-fit: cover;
@@ -1510,6 +1513,9 @@ header {
     width: 1.5rem;
     height: 1.5rem;
     cursor: pointer; }
+    @media screen and (max-width: 768px) {
+      header .go-back {
+        left: 1rem; } }
     header .go-back img {
       -o-object-fit: cover;
       object-fit: cover;
@@ -1763,18 +1769,33 @@ a {
   padding: 0 4rem;
   margin: 0 auto;
   max-width: 100%; }
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 0 1rem; } }
 
 .clip-1 {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 12.625rem 100%, 12.625rem calc(100% - 15.125rem), 0% calc(100% - 15.125rem));
   clip-path: polygon(0 0, 100% 0, 100% 100%, 12.625rem 100%, 12.625rem calc(100% - 15.125rem), 0% calc(100% - 15.125rem)); }
+  @media screen and (max-width: 768px) {
+    .clip-1 {
+      -webkit-clip-path: none;
+      clip-path: none; } }
 
 .clip-2 {
   -webkit-clip-path: polygon(0 0, calc(100% - 12.5rem) 0, calc(100% - 12.5rem) 4.125rem, 100% 4.125rem, 100% calc(100% - 18.375rem), calc(100% - 6.875rem) calc(100% - 18.375rem), calc(100% - 6.875rem) 100%, 0 100%);
   clip-path: polygon(0 0, calc(100% - 12.5rem) 0, calc(100% - 12.5rem) 4.125rem, 100% 4.125rem, 100% calc(100% - 18.375rem), calc(100% - 6.875rem) calc(100% - 18.375rem), calc(100% - 6.875rem) 100%, 0 100%); }
+  @media screen and (max-width: 768px) {
+    .clip-2 {
+      -webkit-clip-path: none;
+      clip-path: none; } }
 
 .clip-3 {
   -webkit-clip-path: polygon(0 0, calc(100% - 12.5rem) 0, calc(100% - 12.5rem) 4.6875rem, 100% 4.6875rem, 100% calc(100% - 4.6875rem), calc(100% - 12.5rem) calc(100% - 4.6875rem), calc(100% - 12.5rem) 100%, 0 100%);
   clip-path: polygon(0 0, calc(100% - 12.5rem) 0, calc(100% - 12.5rem) 4.6875rem, 100% 4.6875rem, 100% calc(100% - 4.6875rem), calc(100% - 12.5rem) calc(100% - 4.6875rem), calc(100% - 12.5rem) 100%, 0 100%); }
+  @media screen and (max-width: 768px) {
+    .clip-3 {
+      -webkit-clip-path: none;
+      clip-path: none; } }
 
 .company-info {
   display: -webkit-box;
@@ -1820,6 +1841,17 @@ a {
     color: #fff;
     max-width: 50%;
     z-index: 2; }
+  .top-image_absolute {
+    position: absolute;
+    top: 0;
+    left: 4rem;
+    right: 4rem; }
+    @media screen and (max-width: 768px) {
+      .top-image_absolute {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto; } }
 
 .button-wrapper {
   display: -webkit-box;
@@ -1839,49 +1871,51 @@ a {
   align-items: stretch;
   min-height: 53.125rem;
   margin-bottom: 4rem; }
+  .section-info > div {
+    font-size: 1.25rem;
+    width: 50%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-top: 33.375rem; }
+    .section-info > div span {
+      margin: 5.875rem 0; }
+    @media screen and (max-width: 768px) {
+      .section-info > div {
+        width: 100%;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        padding: 3rem 1rem; } }
   .section-info__left {
     color: #000;
     font-weight: 500;
-    font-size: 1.25rem;
     line-height: 1.875rem;
     padding-left: 12.5rem;
-    padding-right: 7.5rem;
-    padding-top: 38rem;
-    width: 50%;
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
+    padding-right: 7.5rem; }
   .section-info__right {
     font-weight: 300;
-    font-size: 1.125rem;
     line-height: 1.6875rem;
-    padding-top: 38rem;
     padding-left: 5.5rem;
-    padding-right: 7.5rem;
-    width: 50%;
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
+    padding-right: 7.5rem; }
+  @media screen and (max-width: 768px) {
+    .section-info {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      min-height: auto; } }
 
 .gray-bg {
   background-color: #EBE9E6; }
