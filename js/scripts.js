@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     player = new window.YT.Player('js-video-frame', {
                         height: '714',
                         width: '1272',
-                        videoId: "xAz_DzPUjrM",
+                        videoId: "2ZyMPToh9Yg",
                         playerVars: {
                             'autoplay': 0, // Автовоспроизведение отключено
                             'controls': 0, // Скрытие элементов управления
