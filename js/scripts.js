@@ -98,7 +98,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if ($('.main-posts__slider').length) {
         $('.main-posts__slider').slick({
-            dots: true
+            dots: true,
+            arrows: false
         });
     }
 
