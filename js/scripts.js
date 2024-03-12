@@ -191,5 +191,9 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
     }
-    
+
+    lightbox.option({
+        'maxWidth': 1200,
+        'wrapAround': true
+    });
 });
