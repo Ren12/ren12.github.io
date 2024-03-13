@@ -193,7 +193,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     lightbox.option({
-        'maxWidth': 1200,
-        'wrapAround': true
+        maxWidth: 1200,
+        wrapAround: true
+    });
+
+    document.addEventListener('lightbox:open', function () {
+        document.body.classList.add('lb-disable-scrolling');
+    });
+
+    document.addEventListener('lightbox:close', function () {
+        document.body.classList.remove('lb-disable-scrolling');
     });
 });
