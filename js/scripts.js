@@ -67,18 +67,62 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    if ($('.js-tags-slider').length) {
+        function countVisibleTags() {
+            // Находим блок .tags
+            const tagsContainer = document.querySelector('.tags');
+            // Получаем горизонтальную позицию скролла и размеры контейнера
+            const scrollLeft = tagsContainer.scrollLeft;
+            const containerRect = tagsContainer.getBoundingClientRect();
 
-    $('.search__form').click(function() {
-        $('.search__list').addClass('active')
-    })
+            // Получаем все дочерние .tag элементы
+            const tags = tagsContainer.querySelectorAll('.tag');
+            let visibleCount = 0;
 
-    $('.search__button').click(function(e) {
-        if(!$('.search').hasClass('active')) {
-            $('.search').addClass('active')
+            tags.forEach(tag => {
+                const tagRect = tag.getBoundingClientRect();
+
+                // Проверяем, не выходит ли элемент за границы слева или справа от видимой области контейнера
+                const isFullyVisible = (tagRect.left >= containerRect.left) && (tagRect.right <= containerRect.right);
+
+                // Если элемент полностью видим, учитываем его
+                if (isFullyVisible) {
+                    visibleCount++;
+                }
+            });
+
+            return visibleCount;
+        }
+
+        console.log(countVisibleTags());
+
+        $('.js-tags-slider').slick({
+            infinite: false,
+            slidesToShow: countVisibleTags(),
+            prevArrow: `<button type="button" class="tags__prev"></button>`,
+            nextArrow: `<button type="button" class="tags__next"></button>`,
+            variableWidth: true
+        });
+
+        $('.js-tags-slider').on('afterChange', function(event, slick, currentSlide){
+            $(this).slick('slickSetOption', 'slidesToShow', countVisibleTags(), true);
+
+            console.log('Новое значение slidesToShow:', countVisibleTags());
+        });
+    }
+
+
+    $('.js-search__form').click(function() {
+        $('.js-search__list').addClass('active')
+    });
+
+    $('.js-search__button').click(function(e) {
+        if(!$('.js-search').hasClass('active')) {
+            $('.js-search').addClass('active')
         } else {
             window.location.href='search-page.html';
         }
-    })
+    });
 
     
     $(document).mouseup(function (e){ 
