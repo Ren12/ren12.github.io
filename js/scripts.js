@@ -16,9 +16,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //========= для кастомных селектов =========
     if ($('.js-choice').length) {
-        const choices = new Choices('.js-choice', {
-            searchEnabled: false,
-            itemSelectText: ''
+        const selects = document.querySelectorAll('.js-choice');
+        selects.forEach(function (select) {
+            const choices = new Choices(select, {
+                searchEnabled: false,
+                itemSelectText: ''
+            });
         });
     }
 
