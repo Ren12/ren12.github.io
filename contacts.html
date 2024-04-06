@@ -18,6 +18,68 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
         <link rel="stylesheet" href="./css/styles.css" />
+        <script src="https://api-maps.yandex.ru/v3/?lang=ru_RU"></script>
+        <script type="text/javascript">
+            ymaps3.ready.then(() => {
+                  // Иницилиазируем карту
+                  const map = new ymaps3.YMap(
+                      // Передаём ссылку на HTMLElement контейнера
+                      document.getElementById('map'),
+        
+                      // Передаём параметры инициализации карты
+                      {
+                          location: {
+                              // Координаты центра карты
+                              center: [55.778517, 37.692806],
+        
+                              // Уровень масштабирования
+                              zoom: 15
+                          }
+                      }
+                  );
+        
+                  const layer = new ymaps3.YMapDefaultSchemeLayer();
+                  map.addChild(layer);
+        
+                  const content = document.createElement('div');
+                  const marker = new YMap.YMapMarker(content);
+                  content.innerHTML = '<img src="../images/icons/placemark.svg" width="83" height="95">';
+        
+                  map.addChild(marker);
+              });
+              //
+              //
+              //
+              //
+              //
+              //
+              //     //создаем переменные "Карта" и "Метка"
+              //     ymaps.ready(init);
+              //     var myMap,
+              //             myPlacemark;
+              //
+              //     //Инициализируем нашу карту, задав ей координаты, устанавливаем масштаб карты
+              //     function init(){
+              //         myMap = new ymaps.Map("map", {
+              //             center: [55.778517, 37.692806],
+              //             controls: [],
+              //             zoom: 20,
+              //         });
+              //
+              // //Пишем свойства для нашей метки
+              //         myPlacemark = new ymaps.Placemark([55.778517, 37.692806], {
+              //             hintContent: '',
+              //             balloonContent: ''
+              //         }, {
+              //             iconLayout: 'default#image',
+              //             iconImageHref: '../images/icons/placemark.svg',
+              //             iconImageSize: [83, 83],
+              //         });
+              //
+              //         myMap.geoObjects.add(myPlacemark);
+              //         myMap.behaviors.disable('scrollZoom');
+              //     }
+        </script>
         <title></title>
     </head>
     
@@ -46,9 +108,9 @@
                     </div>
                 </div>
             </div>
-            <div class="contacts-map rounded-big overflow-hidden">
-                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A8cb22c0489174a0284901eac1eeded97f32a10a08da910e37b80bc977b9cb599&amp;source=constructor"
-                width="100%" height="400" frameborder="0"></iframe>
+            <div id="map" width="100%" height="400" class="contacts-map rounded-big overflow-hidden">
+                <!-- <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A8cb22c0489174a0284901eac1eeded97f32a10a08da910e37b80bc977b9cb599&amp;source=constructor"
+                width="100%" height="400" frameborder="0"></iframe>-->
             </div>
             <div class="container mt-80 mt-md-32">
                 <div class="row align-items-lg-stretch">
@@ -56,7 +118,7 @@
                         <div class="contact rounded bg-light-gray">
                             <div>
                                 <div class="d-flex justify-content-between align-items-center mb-16">
-                                    <div>Адрес</div>
+                                    <div class="contact__title">Адрес</div>
                                     <div class="copy-button">
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M18.25 6.875C18.25 5.3605 18.25 4.60325 18.003 4.00688C17.8397 3.61229 17.6002 3.25377 17.2982 2.9518C16.9962 2.64983 16.6377 2.41033 16.2431 2.247C15.6468 2 14.8895 2 13.375 2H8.5C5.43525 2 3.9045 2 2.95225 2.95225C2 3.9045 2 5.43525 2 8.5V13.375C2 14.8895 2 15.6468 2.247 16.2431C2.41033 16.6377 2.64983 16.9962 2.9518 17.2982C3.25377 17.6002 3.61229 17.8397 4.00688 18.003C4.60325 18.25 5.3605 18.25 6.875 18.25"
@@ -66,7 +128,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="text-large mb-20">г. Москва, ул. Фридриха Энгельса, д. 75, стр. 5</div>
+                                <div class="contact__text mb-20 mb-md-36">г. Москва, ул. Фридриха Энгельса, д. 75, стр. 5</div>
                             </div> <a href="#" class="text-button_small">
 
                         Яндекс карты
@@ -88,7 +150,7 @@
                         <div class="contact rounded bg-light-gray">
                             <div>
                                 <div class="d-flex justify-content-between align-items-center mb-16">
-                                    <div>Телефон</div>
+                                    <div class="contact__title">Телефон</div>
                                     <div class="copy-button">
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M18.25 6.875C18.25 5.3605 18.25 4.60325 18.003 4.00688C17.8397 3.61229 17.6002 3.25377 17.2982 2.9518C16.9962 2.64983 16.6377 2.41033 16.2431 2.247C15.6468 2 14.8895 2 13.375 2H8.5C5.43525 2 3.9045 2 2.95225 2.95225C2 3.9045 2 5.43525 2 8.5V13.375C2 14.8895 2 15.6468 2.247 16.2431C2.41033 16.6377 2.64983 16.9962 2.9518 17.2982C3.25377 17.6002 3.61229 17.8397 4.00688 18.003C4.60325 18.25 5.3605 18.25 6.875 18.25"
@@ -98,7 +160,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="text-large mb-20">+7 917 568 46 45</div>
+                                <div class="contact__text mb-20 mb-md-36">+7 917 568 46 45</div>
                             </div> <a href="#" class="text-button_small">
 
                         Позвонить
@@ -120,7 +182,7 @@
                         <div class="contact rounded bg-light-gray">
                             <div>
                                 <div class="d-flex justify-content-between align-items-center mb-16">
-                                    <div>Электронная почта</div>
+                                    <div class="contact__title">Электронная почта</div>
                                     <div class="copy-button">
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M18.25 6.875C18.25 5.3605 18.25 4.60325 18.003 4.00688C17.8397 3.61229 17.6002 3.25377 17.2982 2.9518C16.9962 2.64983 16.6377 2.41033 16.2431 2.247C15.6468 2 14.8895 2 13.375 2H8.5C5.43525 2 3.9045 2 2.95225 2.95225C2 3.9045 2 5.43525 2 8.5V13.375C2 14.8895 2 15.6468 2.247 16.2431C2.41033 16.6377 2.64983 16.9962 2.9518 17.2982C3.25377 17.6002 3.61229 17.8397 4.00688 18.003C4.60325 18.25 5.3605 18.25 6.875 18.25"
@@ -130,7 +192,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="text-large mb-20">info@argonlabs.pro</div>
+                                <div class="contact__text mb-20 mb-md-36">info@argonlabs.pro</div>
                             </div> <a href="#" class="text-button_small">
 
                         Написать
@@ -150,12 +212,16 @@
                     </div>
                 </div>
                 <div class="row mt-140 mt-md-80">
-                    <div class="col-lg-6 text-large mb-md-16">Есть идея? Пишите, обсудим!</div>
+                    <div class="col-lg-6 mb-md-16">
+                        <p class="text-large text-md-medium">Есть идея? Пишите, обсудим!</p>
+                    </div>
                     <div class="col-lg-6"> <a href="#" class="button big">Обсудить проект</a>
                     </div>
                 </div>
                 <div class="row mt-80 mt-md-40 mb-140 mb-md-80">
-                    <div class="col-lg-6 text-large mb-md-16">Станьте частью команды</div>
+                    <div class="col-lg-6 text-large mb-md-16">
+                        <p class="text-large text-md-medium">Станьте частью команды</p>
+                    </div>
                     <div class="col-lg-6"> <a href="#" class="button big green">Заполнить заявку</a>
                     </div>
                 </div>
@@ -182,7 +248,7 @@
         <script src="./js/jquery.min.js"></script>
         <script src="./js/choices.min.js"></script>
         <script src="./js/slick.min.js"></script>
-        <!--<script src="./js/lightbox.min.js"></script>-->
+        <script src="./js/lightbox.min.js"></script>
         <script src="./js/scripts.js"></script>
     </body>
 

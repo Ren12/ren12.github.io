@@ -155,7 +155,11 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // подключение видео
 
-    if (document.getElementById('js-video-frame') !== null) {
+    const videoFrame = document.querySelector('.js-video-frame') || false;
+
+    if (videoFrame) {
+        const videoId = videoFrame.dataset.id;
+
         function loadVideo() {
             console.info(`loadVideo called`);
 
@@ -176,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     player = new window.YT.Player('js-video-frame', {
                         height: '714',
                         width: '1272',
-                        videoId: "c1Kawrzf3Bo",
+                        videoId: videoId,
                         playerVars: {
                             'autoplay': 0, // Автовоспроизведение отключено
                             'controls': 0, // Скрытие элементов управления
@@ -195,13 +199,24 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             function onPlayerReady(event) {
-                // event.target.playVideo();
+                // подставляем картинку-превью
+                const imgPreview = document.createElement('img');
+                const imgSrc = `http://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+                imgPreview.classList.add('office__video-preview');
+                imgPreview.setAttribute('src', imgSrc);
+                const videoPlaceholder = document.querySelector('.js-video-placeholder');
+                videoPlaceholder.insertAdjacentElement('beforebegin', imgPreview);
+
 
                 let playButton = document.getElementById('js-play-button');
 
                 playButton.addEventListener("click", function() {
                     player.playVideo();
-                    document.querySelector('.js-video-placeholder').classList.add('hidden');
+                    setTimeout(function () {
+                        videoPlaceholder.classList.add('hidden');
+                        imgPreview.classList.add('hidden');
+                    }, 300);
+
                 });
             }
 
@@ -222,6 +237,39 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.info(`DOMContentLoaded ==>`, document.readyState);
                 loadVideo();
             });
+        }
+
+        function get_youtube_thumbnail(url, quality){
+            if(url){
+                var video_id, thumbnail, result;
+                if(result = url.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/))
+                {
+                    video_id = result.pop();
+                }
+                else if(result = url.match(/youtu.be\/(.{11})/))
+                {
+                    video_id = result.pop();
+                }
+
+                if(video_id){
+                    if(typeof quality == "undefined"){
+                        quality = 'high';
+                    }
+
+                    var quality_key = 'maxresdefault'; // Max quality
+                    if(quality == 'low'){
+                        quality_key = 'sddefault';
+                    }else if(quality == 'medium'){
+                        quality_key = 'mqdefault';
+                    } else if (quality == 'high') {
+                        quality_key = 'hqdefault';
+                    }
+
+                    var thumbnail = "http://img.youtube.com/vi/"+video_id+"/"+quality_key+".jpg";
+                    return thumbnail;
+                }
+            }
+            return false;
         }
     }
     //

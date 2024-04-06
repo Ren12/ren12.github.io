@@ -18,6 +18,68 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
         <link rel="stylesheet" href="./css/styles.css" />
+        <script src="https://api-maps.yandex.ru/v3/?lang=ru_RU"></script>
+        <script type="text/javascript">
+            ymaps3.ready.then(() => {
+                  // Иницилиазируем карту
+                  const map = new ymaps3.YMap(
+                      // Передаём ссылку на HTMLElement контейнера
+                      document.getElementById('map'),
+        
+                      // Передаём параметры инициализации карты
+                      {
+                          location: {
+                              // Координаты центра карты
+                              center: [55.778517, 37.692806],
+        
+                              // Уровень масштабирования
+                              zoom: 15
+                          }
+                      }
+                  );
+        
+                  const layer = new ymaps3.YMapDefaultSchemeLayer();
+                  map.addChild(layer);
+        
+                  const content = document.createElement('div');
+                  const marker = new YMap.YMapMarker(content);
+                  content.innerHTML = '<img src="../images/icons/placemark.svg" width="83" height="95">';
+        
+                  map.addChild(marker);
+              });
+              //
+              //
+              //
+              //
+              //
+              //
+              //     //создаем переменные "Карта" и "Метка"
+              //     ymaps.ready(init);
+              //     var myMap,
+              //             myPlacemark;
+              //
+              //     //Инициализируем нашу карту, задав ей координаты, устанавливаем масштаб карты
+              //     function init(){
+              //         myMap = new ymaps.Map("map", {
+              //             center: [55.778517, 37.692806],
+              //             controls: [],
+              //             zoom: 20,
+              //         });
+              //
+              // //Пишем свойства для нашей метки
+              //         myPlacemark = new ymaps.Placemark([55.778517, 37.692806], {
+              //             hintContent: '',
+              //             balloonContent: ''
+              //         }, {
+              //             iconLayout: 'default#image',
+              //             iconImageHref: '../images/icons/placemark.svg',
+              //             iconImageSize: [83, 83],
+              //         });
+              //
+              //         myMap.geoObjects.add(myPlacemark);
+              //         myMap.behaviors.disable('scrollZoom');
+              //     }
+        </script>
         <title></title>
     </head>
     
@@ -130,48 +192,58 @@
                     <div class="reason-list">
                         <div class="reason reason_v2 rounded mb-72 mb-md-60">
                             <div class="reason__number">1</div>
-                            <p class="reason__description text-20_500"> <a href="#">Аккредитованная</a> IT-компания со всеми преимуществами.</p>
+                            <div class="reason__description">
+                                <p class="text-20_500"> <strong>Аккредитованная</strong> IT-компания со всеми преимуществами.</p>
+                            </div>
                         </div>
                         <div class="reason reason_v2 rounded mb-72 mb-md-60">
                             <div class="reason__number">2</div>
-                            <p class="reason__description">Возможность выбрать для себя подходящий формат работы: </p>
-                            <ul>
-                                <li>Полностью <a href="#">удалённый</a> c <a href="#">гибким графиком</a>: вы сможете
-                                    разбить свой день на удобные интервалы работы и работать из любой точки
-                                    мира.</li>
-                                <li><a href="#">Гибридный</a> (работа в офисе с возможностью работать удалённо).</li>
-                            </ul>
+                            <div class="reason__description">
+                                <p class="mb-16">Возможность выбрать для себя подходящий формат работы: </p>
+                                <ul>
+                                    <li>Полностью <strong>удалённый</strong> c <strong>гибким графиком</strong>:
+                                        вы сможете разбить свой день на удобные интервалы работы и работать из
+                                        любой точки мира.</li>
+                                    <li><strong>Гибридный</strong> (работа в офисе с возможностью работать удалённо).</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="reason reason_v2 rounded mb-72 mb-md-60">
                             <div class="reason__number">3</div>
-                            <p class="reason__description"> <a href="#">Достойное</a> вознаграждение за труд:</p>
-                            <ul>
-                                <li>Своевременная индексация зарплаты.</li>
-                                <li>Премии за успешное выполнение стратегически важных этапов.</li>
-                                <li>Компенсация расходов на фитнес.</li>
-                            </ul>
+                            <div class="reason__description">
+                                <p class="mb-16"> <strong>Достойное</strong> вознаграждение за труд:</p>
+                                <ul>
+                                    <li>Своевременная индексация зарплаты.</li>
+                                    <li>Премии за успешное выполнение стратегически важных этапов.</li>
+                                    <li>Компенсация расходов на фитнес.</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="reason reason_v2 rounded mb-72 mb-md-60">
                             <div class="reason__number">4</div>
-                            <p class="reason__description text-20_500"> <a href="#">Стильный</a> офис в г. Москва (метро Бауманская) с пополнением
-                                запасов чая, кофе и полезных перекусов.</p>
-                            <ul>
-                                <li>Комфортная атмосфера для работы и общения.</li>
-                                <li>Современное техническое оборудование.</li>
-                            </ul>
+                            <div class="reason__description">
+                                <p class="text-20_500 mb-16"> <strong>Стильный</strong> офис в г. Москва (метро Бауманская) с пополнением
+                                    запасов чая, кофе и полезных перекусов.</p>
+                                <ul>
+                                    <li>Комфортная атмосфера для работы и общения.</li>
+                                    <li>Современное техническое оборудование.</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="reason reason_v2 rounded mb-72 mb-md-0">
                             <div class="reason__number">5</div>
-                            <p class="reason__description"> <a href="#">Классный</a> коллектив и <a href="#">профессиональный</a> рост:</p>
-                            <ul>
-                                <li>Мы умеем и любим работать с людьми. Гарантируем правильный менеджмент
-                                    и прокачку недостающих компетенций. У нас выверенный годами баланс между
-                                    дисциплиной и свободой.</li>
-                                <li>Работа над проектами внутри мини-команд с опытными коллегами. Забудьте
-                                    о соло-разработке, девопсе/менеджменте своими руками и бюрократии.</li>
-                                <li>Посещение профильных конференций и мероприятий.</li>
-                                <li>Современный технологический стек.</li>
-                            </ul>
+                            <div class="reason__description">
+                                <p class="mb-16"> <strong>Классный</strong> коллектив и <strong>профессиональный</strong> рост:</p>
+                                <ul>
+                                    <li>Мы умеем и любим работать с людьми. Гарантируем правильный менеджмент
+                                        и прокачку недостающих компетенций. У нас выверенный годами баланс между
+                                        дисциплиной и свободой.</li>
+                                    <li>Работа над проектами внутри мини-команд с опытными коллегами. Забудьте
+                                        о соло-разработке, девопсе/менеджменте своими руками и бюрократии.</li>
+                                    <li>Посещение профильных конференций и мероприятий.</li>
+                                    <li>Современный технологический стек.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -370,7 +442,7 @@
                     </div>
                      <h3 class="office__title mb-40 mb-md-16">Место, куда хочется возвращаться</h3>
                     <div class="office__video mb-140 mb-md-80">
-                        <div class="iframe" id="js-video-frame"></div>
+                        <div class="office__video-iframe js-video-frame" id="js-video-frame" data-id="8rr4XE6xPqg"></div>
                         <div class="office__video-placeholder js-video-placeholder"> <i class="office__video-button" id="js-play-button"></i>
                         </div>
                     </div>
@@ -441,7 +513,7 @@
         <script src="./js/jquery.min.js"></script>
         <script src="./js/choices.min.js"></script>
         <script src="./js/slick.min.js"></script>
-        <!--<script src="./js/lightbox.min.js"></script>-->
+        <script src="./js/lightbox.min.js"></script>
         <script src="./js/scripts.js"></script>
     </body>
 
