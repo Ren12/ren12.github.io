@@ -18,59 +18,34 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
         <link rel="stylesheet" href="./css/styles.css" />
-        <script src="https://api-maps.yandex.ru/v3/?apikey=bf064124-bd35-47a8-9a95-0341514c158f&lang=ru_RU"></script>
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=bf064124-bd35-47a8-9a95-0341514c158f&lang=ru_RU"></script>
         <script type="text/javascript">
-            initMap();
-        
-              async function initMap() {
-                  await ymaps3.ready;
-        
-                  const {YMap, YMapDefaultSchemeLayer} = ymaps3;
-        
-                  const map = new YMap(
-                      document.getElementById('map'),
-                      {
-                          location: {
-                              center: [37.588144, 55.733842],
-                              zoom: 10
-                          }
-                      }
-                  );
-        
-                  map.addChild(new YMapDefaultSchemeLayer());
+            //создаем переменные "Карта" и "Метка"
+              ymaps.ready(init);
+              var myMap,
+                      myPlacemark;
+    
+              //Инициализируем нашу карту, задав ей координаты, устанавливаем масштаб карты
+              function init(){
+                  myMap = new ymaps.Map("map", {
+                      center: [55.778517, 37.692806],
+                      controls: [],
+                      zoom: 17,
+                  });
+    
+          //Пишем свойства для нашей метки
+                  myPlacemark = new ymaps.Placemark([55.778517, 37.692806], {
+                      hintContent: '',
+                      balloonContent: ''
+                  }, {
+                      iconLayout: 'default#image',
+                      iconImageHref: '../images/icons/placemark.svg',
+                      iconImageSize: [83, 83],
+                  });
+    
+                  myMap.geoObjects.add(myPlacemark);
+                  myMap.behaviors.disable('scrollZoom');
               }
-              //
-              //
-              //
-              //
-              //
-              //
-              //     //создаем переменные "Карта" и "Метка"
-              //     ymaps.ready(init);
-              //     var myMap,
-              //             myPlacemark;
-              //
-              //     //Инициализируем нашу карту, задав ей координаты, устанавливаем масштаб карты
-              //     function init(){
-              //         myMap = new ymaps.Map("map", {
-              //             center: [55.778517, 37.692806],
-              //             controls: [],
-              //             zoom: 20,
-              //         });
-              //
-              // //Пишем свойства для нашей метки
-              //         myPlacemark = new ymaps.Placemark([55.778517, 37.692806], {
-              //             hintContent: '',
-              //             balloonContent: ''
-              //         }, {
-              //             iconLayout: 'default#image',
-              //             iconImageHref: '../images/icons/placemark.svg',
-              //             iconImageSize: [83, 83],
-              //         });
-              //
-              //         myMap.geoObjects.add(myPlacemark);
-              //         myMap.behaviors.disable('scrollZoom');
-              //     }
         </script>
         <title></title>
     </head>
