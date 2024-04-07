@@ -272,17 +272,34 @@ document.addEventListener("DOMContentLoaded", function() {
             return false;
         }
     }
-    //
-    // lightbox.option({
-    //     maxWidth: 1200,
-    //     wrapAround: true
-    // });
-    //
-    // document.addEventListener('lightbox:open', function () {
-    //     document.body.classList.add('lb-disable-scrolling');
-    // });
-    //
-    // document.addEventListener('lightbox:close', function () {
-    //     document.body.classList.remove('lb-disable-scrolling');
-    // });
+
+    $('[data-fancybox]').fancybox({
+        loop: false,
+        buttons: [],
+        transitionEffect: "fade",
+        infobar: false,
+        hideScrollbar: false,
+        baseTpl:
+            '<div class="fancybox-container fancybox-custom" role="dialog" tabindex="-1">' +
+            '<div class="fancybox-bg"></div>' +
+            '<div class="fancybox-inner">' +
+            '<div class="fancybox-stage"></div>' +
+            '</div>' +
+        '</div>',
+        afterShow: function(instance, current) {
+            if (current.isComplete) {
+                if (current.$slide.find('.fancybox-custom__close').length) {
+                    current.$slide.find('.fancybox-custom__close').remove();
+                }
+
+                current.$slide.find('.fancybox-content').append(' ' +
+                    '<button data-fancybox-close class="fancybox-custom__close"></button>');
+
+            }
+
+        },
+        clickContent: function(current, event) {
+            return false;
+        },
+    });
 });
