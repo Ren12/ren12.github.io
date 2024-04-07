@@ -276,9 +276,9 @@ document.addEventListener("DOMContentLoaded", function() {
     $('[data-fancybox]').fancybox({
         loop: false,
         buttons: [],
-        transitionEffect: "fade",
         infobar: false,
-        hideScrollbar: false,
+        helpers: { overlay: { locked: false } },
+        parentEl: "body",
         baseTpl:
             '<div class="fancybox-container fancybox-custom" role="dialog" tabindex="-1">' +
             '<div class="fancybox-bg"></div>' +
