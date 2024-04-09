@@ -24,7 +24,8 @@
             //создаем переменные "Карта" и "Метка"
               ymaps.ready(init);
               var myMap,
-                      myPlacemark;
+                  myPlacemark,
+                  myRectangle;
     
               //Инициализируем нашу карту, задав ей координаты, устанавливаем масштаб карты
               function init(){
@@ -34,7 +35,13 @@
                       zoom: 17,
                   });
     
-          //Пишем свойства для нашей метки
+    
+                  myRectangle = new ymaps.Rectangle([[0, 0],[70, 179]], {}, {
+                      fillColor: '#B5A3FF',
+                      fillOpacity: 0.1
+                  });
+                  myMap.geoObjects.add(myRectangle);
+    
                   myPlacemark = new ymaps.Placemark([55.778517, 37.692806], {
                       hintContent: '',
                       balloonContent: ''
