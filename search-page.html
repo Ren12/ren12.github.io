@@ -19,10 +19,25 @@
         rel="stylesheet">
         <link rel="stylesheet" href="./css/styles.css" />
         <link rel="stylesheet" href="./css/jquery.fancybox.min.css" />
+        <style>
+            .ymaps-2-1-79-inner-panes::after {
+                  display:block;
+                  content:'';
+                  position:absolute;
+                  left:0;
+                  top:0;
+                  right:0;
+                  bottom:0;
+                  background-color: #B5A3FF;
+                  mix-blend-mode: color-burn;
+                  z-index: 2000;
+              }
+        </style>
         <script src="https://api-maps.yandex.ru/2.1/?apikey=bf064124-bd35-47a8-9a95-0341514c158f&lang=ru_RU"></script>
         <script type="text/javascript">
             //создаем переменные "Карта" и "Метка"
               ymaps.ready(init);
+    
               var myMap,
                   myPlacemark,
                   myRectangle;
@@ -35,12 +50,12 @@
                       zoom: 17,
                   });
     
-    
-                  myRectangle = new ymaps.Rectangle([[0, 0],[70, 179]], {}, {
-                      fillColor: '#B5A3FF',
-                      fillOpacity: 0.1
-                  });
-                  myMap.geoObjects.add(myRectangle);
+                  //
+                  // myRectangle = new ymaps.Rectangle([[0, 0],[70, 179]], {}, {
+                  //     fillColor: '#B5A3FF',
+                  //     fillOpacity: 0.1
+                  // });
+                  // myMap.geoObjects.add(myRectangle);
     
                   myPlacemark = new ymaps.Placemark([55.778517, 37.692806], {
                       hintContent: '',
