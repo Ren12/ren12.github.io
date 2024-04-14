@@ -56,6 +56,26 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+
+    //========= подключение баннера как слайдера =========
+    if ($('.js-banner-slider').length) {
+        $('.js-banner-slider').slick({
+            infinite: true,
+            fade: true,
+            autoplay: true,
+            speed: 1000,
+            // prevArrow: `<button type="button" class="slider__prev"></button>`,
+            // nextArrow: `<button type="button" class="slider__next"></button>`,
+            responsive: [{
+                breakpoint: 1440,
+                settings: {
+                    arrows: false,
+                    dots: true
+                }
+            }]
+        });
+    }
+
     if ($('.js-tags-slider').length) {
         function countVisibleTags() {
             // Находим блок .tags
@@ -83,8 +103,6 @@ document.addEventListener("DOMContentLoaded", function() {
             return visibleCount;
         }
 
-        console.log(countVisibleTags());
-
         $('.js-tags-slider').slick({
             infinite: false,
             slidesToShow: countVisibleTags(),
@@ -95,8 +113,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         $('.js-tags-slider').on('afterChange', function(event, slick, currentSlide){
             $(this).slick('slickSetOption', 'slidesToShow', countVisibleTags(), true);
-
-            console.log('Новое значение slidesToShow:', countVisibleTags());
         });
     }
 
@@ -116,16 +132,12 @@ document.addEventListener("DOMContentLoaded", function() {
     
     $(document).mouseup(function (e){ 
         let div = $(".search:not(.opened)"); 
-        if (!div.is(e.target)
-            && div.has(e.target).length === 0) { 
-            
+        if (!div.is(e.target) && div.has(e.target).length === 0) {
             $('.search__list').removeClass('active')
             setTimeout(() => {
                 div.removeClass('active');
             }, 300);
-            
-    }
-
+        }
     });
 
 

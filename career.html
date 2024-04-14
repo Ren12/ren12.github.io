@@ -32,6 +32,11 @@
                   mix-blend-mode: color-burn;
                   z-index: 2000;
               }
+        
+              .ymaps-2-1-79-map-copyrights-promo,
+              .ymaps-2-1-79-copyright__wrap {
+                  display: none!important;
+              }
         </style>
         <script src="https://api-maps.yandex.ru/2.1/?apikey=bf064124-bd35-47a8-9a95-0341514c158f&lang=ru_RU"></script>
         <script type="text/javascript">
@@ -47,15 +52,8 @@
                   myMap = new ymaps.Map("map", {
                       center: [55.778517, 37.692806],
                       controls: [],
-                      zoom: 17,
+                      zoom: 17
                   });
-    
-                  //
-                  // myRectangle = new ymaps.Rectangle([[0, 0],[70, 179]], {}, {
-                  //     fillColor: '#B5A3FF',
-                  //     fillOpacity: 0.1
-                  // });
-                  // myMap.geoObjects.add(myRectangle);
     
                   myPlacemark = new ymaps.Placemark([55.778517, 37.692806], {
                       hintContent: '',
@@ -75,7 +73,7 @@
     
     <body>
         <header class="js-header">
-            <div class="container d-flex align-items-center justify-content-between"> <a href="index.html" class="logo">
+            <div class="container d-flex align-items-center justify-content-between"> <a href="/" class="logo">
 
       <img src="/images/logo.svg" alt="Company">
 
@@ -92,9 +90,9 @@
         </header>
         <div class="wrapper">
             <div class="container pt-80 pt-md-40">
-                <div class="row mb-80 mb-md-40">
+                <div class="row mb-80 mb-md-28">
                     <div class="col-lg-9">
-                         <h1 class="mb-28">ArgonLabs — команда единомышленников</h1>
+                         <h1 class="mb-28 mb-md-12">ArgonLabs — команда единомышленников</h1>
                         <p class="text-large">Мы дорожим каждым сотрудником, уважаем личное пространство и ценим профессионализм</p>
                     </div>
                 </div>
