@@ -12100,7 +12100,6 @@ html {
     * Remove the margin in all browsers.
     */
 body {
-  height: 100%;
   margin: 0;
 }
 
@@ -17442,13 +17441,13 @@ ul ul li::before {
 }
 .wrapper {
   overflow-x: hidden;
-  min-height: calc(100% - 80px - 116px);
+  min-height: calc(100vh - 116px);
   margin-left: auto;
   margin-right: auto;
 }
 @media (max-width: 991.98px) {
   .wrapper {
-    min-height: calc(100% - 64px - 248px);
+    min-height: calc(100vh - 248px);
   }
 }
 
@@ -17539,13 +17538,24 @@ blockquote::before {
 
 header,
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
   padding: 16px 0;
   background-color: #F7F7F8;
   -webkit-transition: background-color 0.3s ease-out;
   transition: background-color 0.3s ease-out;
+  width: 100%;
   z-index: 11000;
+}
+header + .wrapper,
+.header + .wrapper {
+  padding-top: 80px;
+}
+@media (max-width: 767.98px) {
+  header + .wrapper,
+  .header + .wrapper {
+    padding-top: 64px;
+  }
 }
 header.sticky,
 .header.sticky {
@@ -17554,16 +17564,6 @@ header.sticky,
   top: 0;
   left: 0;
   background-color: #F7F7F8;
-}
-header.sticky + .wrapper,
-.header.sticky + .wrapper {
-  padding-top: 80px;
-}
-@media (max-width: 767.98px) {
-  header.sticky + .wrapper,
-  .header.sticky + .wrapper {
-    padding-top: 64px;
-  }
 }
 header.active,
 .header.active {
@@ -18687,6 +18687,11 @@ button.big:active,
   width: 100%;
   pointer-events: all;
 }
+.search.active .search__head .search__close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .search__head {
   position: absolute;
   right: 0;
@@ -18745,6 +18750,28 @@ button.big:active,
   margin-top: 58px;
   opacity: 1;
   max-height: 100vh;
+}
+.search__close {
+  background: transparent !important;
+  padding: 0;
+  position: relative;
+  z-index: 100;
+  width: 24px;
+  height: 24px;
+  margin-right: 14px;
+  display: none;
+  border-radius: 0;
+}
+.search__close::before {
+  display: none;
+}
+.search__close svg path {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.search__close:hover svg path, .search__close:active svg path {
+  stroke: #19191C;
+  stroke-dasharray: 32 0, 31.11 0;
 }
 .search__button {
   display: -webkit-box;
@@ -19322,9 +19349,10 @@ button.big:active,
   width: 32px;
   height: 30px;
   padding: 0;
-  background: url("../images/icons/close-white-icon.svg") center no-repeat/cover;
+  background: url("../images/icons/close-white-icon.svg") center no-repeat;
   outline: none;
   opacity: 0.8;
+  border-radius: 0;
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }

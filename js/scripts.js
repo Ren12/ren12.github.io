@@ -79,10 +79,10 @@ document.addEventListener("DOMContentLoaded", function() {
     if ($('.js-tags-slider').length) {
         function countVisibleTags() {
             // Находим блок .tags
-            const tagsContainer = document.querySelector('.tags');
+            const parentContainer = document.querySelector('.tags');
             // Получаем горизонтальную позицию скролла и размеры контейнера
-            const scrollLeft = tagsContainer.scrollLeft;
-            const containerRect = tagsContainer.getBoundingClientRect();
+            const scrollLeft = parentContainer.scrollLeft;
+            const containerRect = parentContainer.getBoundingClientRect();
 
             // Получаем все дочерние .tag элементы
             const tags = tagsContainer.querySelectorAll('.tag');
