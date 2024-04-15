@@ -145,7 +145,8 @@ document.addEventListener("DOMContentLoaded", function() {
     if ($('.main-posts__slider').length) {
         $('.main-posts__slider').slick({
             dots: true,
-            arrows: false
+            arrows: false,
+            fade: true
         });
     }
 
