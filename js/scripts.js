@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
         $('.js-slider').slick({
             infinite: false,
             slidesToShow: 3,
+            slidesToScroll: 1,
             prevArrow: `<button type="button" class="slider__prev"></button>`,
             nextArrow: `<button type="button" class="slider__next"></button>`,
             variableWidth: true,
@@ -79,10 +80,10 @@ document.addEventListener("DOMContentLoaded", function() {
     if ($('.js-tags-slider').length) {
         function countVisibleTags() {
             // Находим блок .tags
-            const parentContainer = document.querySelector('.tags');
+            const tagsContainer = document.querySelector('.tags');
             // Получаем горизонтальную позицию скролла и размеры контейнера
-            const scrollLeft = parentContainer.scrollLeft;
-            const containerRect = parentContainer.getBoundingClientRect();
+            const scrollLeft = tagsContainer.scrollLeft;
+            const containerRect = tagsContainer.getBoundingClientRect();
 
             // Получаем все дочерние .tag элементы
             const tags = tagsContainer.querySelectorAll('.tag');
