@@ -65,8 +65,6 @@ document.addEventListener("DOMContentLoaded", function() {
             fade: true,
             autoplay: true,
             speed: 1000,
-            // prevArrow: `<button type="button" class="slider__prev"></button>`,
-            // nextArrow: `<button type="button" class="slider__next"></button>`,
             responsive: [{
                 breakpoint: 1440,
                 settings: {
@@ -77,25 +75,20 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    //========= подключение слайдера для тегов =========
     if ($('.js-tags-slider').length) {
         function countVisibleTags() {
-            // Находим блок .tags
             const tagsContainer = document.querySelector('.tags');
-            // Получаем горизонтальную позицию скролла и размеры контейнера
-            const scrollLeft = tagsContainer.scrollLeft;
             const containerRect = tagsContainer.getBoundingClientRect();
 
-            // Получаем все дочерние .tag элементы
             const tags = tagsContainer.querySelectorAll('.tag');
             let visibleCount = 0;
 
             tags.forEach(tag => {
                 const tagRect = tag.getBoundingClientRect();
 
-                // Проверяем, не выходит ли элемент за границы слева или справа от видимой области контейнера
                 const isFullyVisible = (tagRect.left >= containerRect.left) && (tagRect.right <= containerRect.right);
 
-                // Если элемент полностью видим, учитываем его
                 if (isFullyVisible) {
                     visibleCount++;
                 }
@@ -153,21 +146,17 @@ document.addEventListener("DOMContentLoaded", function() {
     $('.nav-toggler').click(function () {
         $(this).toggleClass('active');
         $('nav, .header').toggleClass('active')
-    })
+    });
 
 
     let posts = $('.posts').html();
 
     $('.more-posts').click(function() {
-        // console.log(posts);
         $('.posts').append(posts);
-    })
-    
-    
-    
-    
-    
-    // подключение видео
+    });
+
+
+    //========= подключение видео с youtube =========
 
     const videoFrame = document.querySelector('.js-video-frame') || false;
 
@@ -175,8 +164,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const videoId = videoFrame.dataset.id;
 
         function loadVideo() {
-            console.info(`loadVideo called`);
-
             (function loadYoutubeIFrameApiScript() {
                 const tag = document.createElement("script");
                 tag.src = "https://www.youtube.com/iframe_api";
@@ -244,18 +231,16 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         if (document.readyState !== "loading") {
-            console.info(`document.readyState ==>`, document.readyState);
             loadVideo();
         } else {
             document.addEventListener("DOMContentLoaded", function() {
-                console.info(`DOMContentLoaded ==>`, document.readyState);
                 loadVideo();
             });
         }
 
         function get_youtube_thumbnail(url, quality){
             if(url){
-                var video_id, thumbnail, result;
+                let video_id, thumbnail, result;
                 if(result = url.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/))
                 {
                     video_id = result.pop();
@@ -270,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         quality = 'high';
                     }
 
-                    var quality_key = 'maxresdefault'; // Max quality
+                    let quality_key = 'maxresdefault'; // Max quality
                     if(quality == 'low'){
                         quality_key = 'sddefault';
                     }else if(quality == 'medium'){
@@ -279,7 +264,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         quality_key = 'hqdefault';
                     }
 
-                    var thumbnail = "http://img.youtube.com/vi/"+video_id+"/"+quality_key+".jpg";
+                    let thumbnail = "http://img.youtube.com/vi/"+video_id+"/"+quality_key+".jpg";
                     return thumbnail;
                 }
             }
@@ -287,6 +272,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    //========= Подключение fancybox для галереи =========
     $('[data-fancybox]').fancybox({
         loop: false,
         buttons: [],
@@ -316,4 +302,26 @@ document.addEventListener("DOMContentLoaded", function() {
             return false;
         },
     });
+
+    //========= Копирование контактов =========
+    const copyButtons = document.querySelectorAll('.copy-button') || false;
+
+    if (copyButtons) {
+        copyButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                const contact = button.closest('.contact');
+                const contactText = contact.querySelector('.contact__text > a');
+                const tempTextarea = document.createElement('textarea');
+                tempTextarea.value = contactText.textContent;
+                document.body.appendChild(tempTextarea);
+                tempTextarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempTextarea);
+                $('.copied-message').addClass('visible');
+                setTimeout(() => {
+                    $('.copied-message').removeClass('visible');
+                }, 2000);
+            });
+        });
+    }
 });
