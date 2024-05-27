@@ -1,4 +1,0 @@
-<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="" style="">
-<path d="M18 19L13 24L18 29" stroke="#60C730" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="jIIKbuPH_0"></path>
-<path d="M30 19L35 24L30 29" stroke="#60C730" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="jIIKbuPH_1"></path>
-<style data-made-with="vivus-instant">.jIIKbuPH_0{stroke-dasharray:15 17;stroke-dashoffset:16;}.start .jIIKbuPH_0{animation:jIIKbuPH_draw 300ms ease-in-out 0ms forwards;}.jIIKbuPH_1{stroke-dasharray:15 17;stroke-dashoffset:16;}.start .jIIKbuPH_1{animation:jIIKbuPH_draw 300ms ease-in-out 300ms forwards;}@keyframes jIIKbuPH_draw{100%{stroke-dashoffset:0;}}@keyframes jIIKbuPH_fade{0%{stroke-opacity:1;}91.66666666666667%{stroke-opacity:1;}100%{stroke-opacity:0;}}</style></svg>
