@@ -1,0 +1,99 @@
+.mu-primary-btn,
+.mu-send-msg-btn {
+  border-radius: 0;
+}
+
+.mu-contact-form .form-group textarea,
+.mu-contact-form .form-group input {
+  border-radius: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 48px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1300px;
+  }
+}
+
+.mu-hero-left .mu-primary-btn {
+  font-size: 20px;
+  font-weight: 400;
+  padding: 20px 42px;
+}
+.mu-hero-left h1 {
+  font-size: 60px;
+  margin-bottom: 50px;
+}
+.mu-hero-left p {
+  font-size: 20px;
+  margin-bottom: 32px;
+}
+
+.mu-pricing-single-head .mu-price-tag {
+  font-weight: 500;
+}
+.mu-pricing-single-head .mu-price-tag span {
+  font-size: 35px;
+  margin-left: -10px;
+}
+
+.mu-order-btn {
+  border-radius: 0;
+}
+
+.mu-hero-right {
+  mix-blend-mode: color-burn;
+}
+
+#mu-hero {
+  background: linear-gradient(45deg, #1d193d, #2A207A);
+}
+
+.mu-author-info h3 {
+  padding-bottom: 24px;
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+.mu-author-info p {
+  font-size: 18px;
+}
+
+.mu-heading-area p {
+  font-size: 20px;
+}
+
+.mu-testimonial-slide .mu-rt-img {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.mu-testimonial-slide li p {
+  font-size: 20px;
+}
+
+.navbar-default .mu-menu li a {
+  font-size: 20px;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  width: 40px;
+}
+.navbar-default .navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 9px;
+}
