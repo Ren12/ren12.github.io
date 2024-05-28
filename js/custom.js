@@ -59,7 +59,7 @@
 		menuItems.click(function(e){
 		  var href = $(this).attr("href"),
 		      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+22;
-		  jQuery('html, body').stop().animate({ 
+		  jQuery('html, body').stop().animate({
 		      scrollTop: offsetTop
 		  }, 1500);
 		  e.preventDefault();
@@ -87,23 +87,6 @@
 		         .end().filter("[href=\\#"+id+"]").parent().addClass("active");
 		   }           
 		})
-
-
-	/* ----------------------------------------------------------- */
-	/*  3. GOOGLE MAP
-	/* ----------------------------------------------------------- */ 
-		    
-	    $('#mu-google-map').click(function () {
-
-		    $('#mu-google-map iframe').css("pointer-events", "auto");
-
-		});
-		
-		$("#mu-google-map").mouseleave(function() {
-
-		  $('#mu-google-map iframe').css("pointer-events", "none"); 
-
-		});
 		
 		
 
@@ -128,12 +111,8 @@
 		  $('.mu-navbar .in').collapse('hide');
 		});
 
-
-
-	
 	
 })( jQuery );
 
 
   
-	

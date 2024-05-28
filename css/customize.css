@@ -95,14 +95,14 @@ h2 {
 }
 
 #mu-hero {
-  background: #041624 url("../images/an-bg-test1.jpg") no-repeat bottom center;
-  -webkit-box-shadow: 5px 0 10px #041624;
-  box-shadow: 5px 0 10px #041624;
+  background: #000002 url("../images/an-bg-test3.jpg") no-repeat bottom center;
+  -webkit-box-shadow: 10px 10px 20px #000002;
+  box-shadow: 10px 10px 20px #000002;
+  background-size: auto 100%;
 }
 @media (max-width: 767px) {
   #mu-hero {
     background-position: bottom right -232px;
-    background-size: auto 90%;
   }
 }
 
@@ -127,8 +127,14 @@ h2 {
   font-size: 20px;
 }
 
+.navbar-default .mu-menu {
+  list-style: none;
+}
+.navbar-default .mu-menu li {
+  list-style: none;
+}
 .navbar-default .mu-menu li a {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .navbar-default .navbar-toggle {
@@ -144,4 +150,8 @@ h2 {
 .mu-video-review-area {
   position: relative;
   z-index: 1;
+}
+
+.navbar-default .mu-menu li a:after {
+  left: 0;
 }

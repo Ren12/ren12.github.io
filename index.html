@@ -35,16 +35,13 @@
         <!-- Start Header -->
         <header id="mu-header" class="" role="banner">
             <div class="container">
-                <nav class="navbar navbar-default mu-navbar">
+                <nav class="navbar navbar-expand-lg navbar-dark navbar-default mu-navbar">
                     <div class="container-fluid">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span>
- <span class="icon-bar"></span>
-
-                                <span
-                                class="icon-bar"></span> <span class="icon-bar"></span>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                            aria-expanded="false" aria-label="Toggle navigation">	<span class="navbar-toggler-icon"></span>
 
                             </button>
                             <!-- Text Logo -->
@@ -57,17 +54,17 @@
                             <!-- <a class="navbar-brand" href="index.html"><img src="/images/logo.png"></a>-->
                         </div>
                         <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end"
+                        id="navbarToggleExternalContent">
                             <ul class="nav navbar-nav mu-menu navbar-right">
-                                <li><a href="#">Знакомство с тенью</a>
+                                <li class="nav-item"><a class="nav-link" href="#">Знакомство с тенью</a>
                                 </li>
-                                <li><a href="#mu-book-overview">Для кого курс</a>
+                                <!-- <li class="nav-item"><a class="nav-link" href="#mu-book-overview">Для кого курс</a></li>-->
+                                <li class="nav-item"><a class="nav-link" href="#mu-author">Об авторе</a>
                                 </li>
-                                <li><a href="#mu-author">Об авторе</a>
+                                <li class="nav-item"><a class="nav-link" href="#mu-testimonials">Мнения</a>
                                 </li>
-                                <li><a href="#mu-testimonials">Мнения</a>
-                                </li>
-                                <li><a href="#mu-pricing">Купить</a>
+                                <li class="nav-item"><a class="nav-link" href="#mu-pricing">Купить</a>
                                 </li>
                             </ul>
                         </div>
@@ -82,7 +79,7 @@
         <section id="mu-hero">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-sm-12 col-sm-pull-6">
+                    <div class="col-lg-6 col-sm-12 col-sm-pull-6">
                         <div class="mu-hero-left">
                             	<h1>Союз с Тенью:</h1>
 
@@ -97,8 +94,8 @@
                                 обрести внутреннюю целостность.</p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-12 col-sm-push-6 d-flex align-items-stretch">
-                        <div class="mu-hero-right">	<a href="#mu-pricing" class="mu-primary-btn">Смотреть</a>
+                    <div class="col-lg-6 col-sm-12 col-sm-push-6 d-flex align-items-stretch">
+                        <div class="mu-hero-right">	<a href="#mu-pricing" class="mu-primary-btn">Пройти курс</a>
 
                         </div>
                     </div>
@@ -385,11 +382,14 @@
         </footer>
         <!-- End footer -->
         <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
         <!-- Include all compiled plugins (below), or include individual
         files as needed -->
         <!-- Bootstrap -->
-        <script src="/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
         <!-- Slick slider -->
         <script type="text/javascript" src="/js/slick.min.js"></script>
         <!-- Counter js -->
