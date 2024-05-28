@@ -1000,9 +1000,6 @@ button:focus {
 /* RESPONSIVE STYLE */
 /*--------------------*/
 @media (max-width: 1199px) {
-  .mu-hero-left h1 {
-    font-size: 36px;
-  }
   .navbar-brand img {
     width: 180px;
     margin-top: -10px;
@@ -1076,6 +1073,12 @@ button:focus {
     background-color: rgba(0, 0, 0, 0.8);
     text-align: center;
   }
+  .mu-hero-left h1 {
+    font-size: 36px !important;
+  }
+  h2 {
+    font-size: 25px !important;
+  }
   .navbar-default .mu-menu li a {
     display: inline-block;
   }
@@ -1129,9 +1132,6 @@ button:focus {
   .navbar-toggle .icon-bar {
     width: 18px;
   }
-  h2 {
-    font-size: 25px;
-  }
   .mu-heading-title {
     margin-bottom: 10px;
   }
@@ -1142,7 +1142,7 @@ button:focus {
     padding: 0 5%;
   }
   .mu-about-content-single h4 {
-    margin-bottom: 18px;
+    margin-bottom: 18px !important;
   }
   .mu-team-social-info a {
     width: 35px;
