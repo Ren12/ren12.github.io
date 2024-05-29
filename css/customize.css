@@ -103,6 +103,7 @@ h2 {
 @media (max-width: 767px) {
   #mu-hero {
     background-position: bottom right -232px;
+    padding-top: 320px;
   }
 }
 
@@ -152,6 +153,18 @@ h2 {
   z-index: 1;
 }
 
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 .navbar-default .mu-menu li a:after {
   left: 0;
+}
+
+.mu-fixed-nav .navbar-collapse {
+  background: transparent;
 }
