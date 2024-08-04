@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <!--[if IE]>
+            <meta http-equiv="X-UA-Compatible" content="IE = edge">
+        <![endif]-->
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/static/images/favicon/site.webmanifest">
+        <link rel="stylesheet" href="/static/css/jquery.fancybox.min.css" />
+        <link rel="stylesheet" href="/static/css/jquery-ui.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"
+        />
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+        />
+        <link rel="stylesheet" href="/static/css/styles.css" />
+        <title></title>
+    </head>
+    
+    <body>
+        <div class="wrapper">
+            <header class=@@param>
+                <div class="container">
+                    <div class="header__inner"> <a href="/" class="header__company">
+          <img src="/static/images/everlook.svg" alt="Everlook">
+        </a>
+ <a class="header__lang" href="#">
+          <img src="/static/images/icons/map-point-icon.svg" alt="Language">
+          <span>Dubai</span>
+          <span class="delimiter">/</span>
+          <span>Eng</span>
+        </a>
+
+                        <div class="search-input">
+                            <input type="text" placeholder="What you look to do?" class="pl-12">
+                            <button type="submit" class="search-input__search">
+                                <img src="/static/images/icons/arrow-right-icon.svg" alt="Search">
+                            </button>
+                        </div>
+                        <div class="header__links"> <a href="#">
+            <img src="/static/images/icons/calendar-filled-icon.svg" alt="">
+          </a>
+ <a href="#">
+            <img src="/static/images/icons/favorites-icon.svg" alt="Favorites">
+          </a>
+ <a href="#">
+            <img src="/static/images/icons/cart-icon.svg" alt="Cart">
+          </a>
+ <a href="#" class="new-message">
+            <img src="/static/images/icons/messages-icon.svg" alt="Messages">
+          </a>
+
+                        </div> <a href="#" class="header__user">
+          <span class="header__user-name">Golovanov</span>
+          <span class="header__user-pic">
+            <img src="/static/images/user-pic-test.svg" alt="User">
+            <span class="header__user-letter">A</span>
+          </span>
+        </a>
+
+                    </div>
+                </div>
+            </header>
+            <div class="main-block-wrapper">
+                <div class="main-block">
+                    <div class="shadowboard"></div>
+                    <div class="clipboard"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 offset-lg-1">
+                                <div class="d-flex justify-content-between flex-wrap">
+                                    <div class="steps-breadcrumbs">
+                                        <div class="steps-breadcrumbs__step steps-breadcrumbs__step_home">
+                                            <img src="static/images/icons/home-gray-icon.svg" alt="Back">
+                                        </div>
+                                        <div class="steps-breadcrumbs__step selected"> <span>Specific Room Remodeling</span>
+                                        </div>
+                                        <div class="steps-breadcrumbs__step selected"> <span>Specific Room Remodeling</span>
+                                        </div>
+                                        <div class="steps-breadcrumbs__step selected"> <span>Specific Room Remodeling</span>
+                                        </div>
+                                        <div class="steps-breadcrumbs__step">
+                                            <img src="static/images/icons/more-dots-icon.svg" alt="">
+                                        </div>
+                                        <div class="steps-breadcrumbs__step selected"></div>
+                                        <div class="steps-breadcrumbs__step selected"></div>
+                                        <div class="steps-breadcrumbs__step blue"> <span>3/4</span>
+                                        </div>
+                                        <div class="steps-breadcrumbs__step"></div>
+                                    </div>
+                                    <!--показывается после того как выбрали все нужные теги -->
+                                    <div class="avr-price"> <span>AVR Price: 300-2,700 AED</span>
+                                        <button class="js-info">
+                                            <img src="/static/images/icons/info-icon.svg" alt="Info">
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- step-content-wrapper - это блок-обертка для шагов -->
+                                <div class="step-content-wrapper">
+                                    <div class="tags-list">
+                                        <button class="tag">Ventilation</button>
+                                        <button class="tag">Air Conditioning</button>
+                                        <button class="tag">Water Supply</button>
+                                        <button class="tag">LAN / Wi-Fi</button>
+                                        <button class="tag">Plumbing</button>
+                                        <button class="tag active">Electric</button>
+                                        <button class="tag">Security</button>
+                                        <button class="tag">Ventilation</button>
+                                        <button class="tag">Air Conditioning</button>
+                                        <button class="tag">Water Supply</button>
+                                        <button class="tag">LAN / Wi-Fi</button>
+                                        <button class="tag">Plumbing</button>
+                                        <button class="tag">Electric</button>
+                                        <button class="tag">Security</button>
+                                        <button class="tag">LAN / Wi-Fi</button>
+                                        <button class="tag">Plumbing</button>
+                                        <button class="tag">Electric</button>
+                                        <button class="tag">Security</button>
+                                        <button class="tag">Ventilation</button>
+                                        <button class="tag red">Air Conditioning</button>
+                                    </div>
+                                    <div class="tag-description">
+                                        <p>replace a fixture replace a fixturereplace a fixturereplace a fixture
+                                            replace a fixture replace a fixturereplace a fixturereplace a fixture replace
+                                            a fixturereplace a fixture</p>
+                                    </div>
+                                </div>
+                                <div class="step-content-wrapper">
+                                    <div class="tags-list">
+                                        <button class="tag">Ventilation</button>
+                                        <button class="tag">Air Conditioning</button>
+                                        <button class="tag">Water Supply</button>
+                                        <button class="tag">LAN / Wi-Fi</button>
+                                        <button class="tag">Plumbing</button>
+                                        <button class="tag">Electric</button>
+                                        <button class="tag">Security</button>
+                                        <button class="tag">Ventilation</button>
+                                        <button class="tag">Air Conditioning</button>
+                                        <button class="tag">Water Supply</button>
+                                        <button class="tag">LAN / Wi-Fi</button>
+                                        <button class="tag">Plumbing</button>
+                                        <button class="tag">Electric</button>
+                                        <button class="tag">Security</button>
+                                        <button class="tag">LAN / Wi-Fi</button>
+                                        <button class="tag">Plumbing</button>
+                                        <button class="tag active">Electric</button>
+                                        <button class="tag">Security</button>
+                                        <button class="tag">Ventilation</button>
+                                        <button class="tag">Air Conditioning</button>
+                                    </div>
+                                    <div class="tag-description">
+                                        <p> <span>E.g. replace a shower, bath, toilet, sink, etc.</span>replace a
+                                            fixture replace a fixturereplace a fixturereplace a fixture replace a fixture
+                                            replace a fixturereplace a fixturereplace a fixture replace a fixturereplace
+                                            a fixture</p>
+                                    </div>
+                                </div>
+                                <div class="step-content-wrapper">
+                                    <p class="step-question">Should the master install the devices?</p>
+                                    <div class="d-flex align-items-stretch flex-wrap gap-10 mb-36">
+                                        <label class="job-type single count">
+                                            <input type="radio" name="job-type" class="job-type__input">
+                                            <img src="static/images/job-types/test.svg" alt="">
+                                            <div class="job-type__count">
+                                                <button class="job-type__count-decrease">-</button>
+                                                <input type="number" value="0">
+                                                <button class="job-type__count-increase">+</button>
+                                            </div> <span>Repair</span>
+                                        </label>
+                                        <label class="job-type single">
+                                            <input type="radio" name="job-type" class="job-type__input">
+                                            <img src="static/images/job-types/test.svg" alt=""> <span>AC Wiring</span>
+                                        </label>
+                                        <label class="job-type single count">
+                                            <input type="radio" name="job-type" class="job-type__input">
+                                            <img src="static/images/job-types/test.svg" alt="">
+                                            <div class="job-type__count">
+                                                <button class="job-type__count-decrease">-</button>
+                                                <input type="number" value="0">
+                                                <button class="job-type__count-increase">+</button>
+                                            </div> <span>Repair</span>
+                                        </label>
+                                        <label class="job-type single">
+                                            <input type="radio" name="job-type" class="job-type__input">
+                                            <img src="static/images/job-types/test.svg" alt=""> <span>AC Wiring</span>
+                                        </label>
+                                    </div>
+                                    <p class="step-question">Should the master install the devices?</p>
+                                    <ul class="step-choice-list mb-24">
+                                        <li>
+                                            <input class="checkbox" id="choice-1" type="checkbox" value="yes" disabled>
+                                            <label for="choice-1">Yes</label>
+                                        </li>
+                                        <li>
+                                            <input class="checkbox" id="choice-2" type="checkbox" value="no">
+                                            <label for="choice-2">No</label>
+                                        </li>
+                                        <li>
+                                            <input class="checkbox" id="choice-3" type="checkbox" value="maybe">
+                                            <label for="choice-3">Maybe</label>
+                                        </li>
+                                    </ul>
+                                    <textarea class="small" id="more1" placeholder="Add some more?"></textarea>
+                                </div>
+                                <div class="step-content-wrapper">
+                                    <p class="step-question">Should the master install the devices?</p>
+                                    <div class="d-flex flex-wrap gap-10 mb-36">
+                                        <label class="job-type multiple count">
+                                            <input type="checkbox" value="1" class="job-type__input">
+                                            <img src="static/images/job-types/test.svg" alt="">
+                                            <div class="job-type__count">
+                                                <button class="job-type__count-decrease">-</button>
+                                                <input type="number" value="0">
+                                                <button class="job-type__count-increase">+</button>
+                                            </div> <span>Repair</span>
+                                        </label>
+                                        <label class="job-type multiple">
+                                            <input type="checkbox" value="2" class="job-type__input">
+                                            <img src="static/images/job-types/test.svg" alt=""> <span>AC Wiring</span>
+                                        </label>
+                                    </div>
+                                    <p class="step-question">Should the master install the devices?</p>
+                                    <div class="d-flex gap-80 flex-wrap">
+                                        <ul class="step-choice-list mb-24">
+                                            <li>
+                                                <input class="checkbox" id="choice-11" type="checkbox" value="yes">
+                                                <label for="choice-11">Yes</label>
+                                            </li>
+                                            <li>
+                                                <input class="checkbox" id="choice-12" type="checkbox" value="no">
+                                                <label for="choice-12">No</label>
+                                            </li>
+                                            <li>
+                                                <input class="checkbox" id="choice-13" type="checkbox" value="maybe">
+                                                <label for="choice-13">Maybe</label>
+                                            </li>
+                                        </ul>
+                                        <ul class="step-choice-list mb-24">
+                                            <li>
+                                                <input class="radio" id="choice-111" type="radio" name="choice" disabled>
+                                                <label for="choice-111">Yes</label>
+                                            </li>
+                                            <li>
+                                                <input class="radio" id="choice-121" type="radio" name="choice">
+                                                <label for="choice-121">No</label>
+                                            </li>
+                                            <li>
+                                                <input class="radio" id="choice-131" type="radio" name="choice">
+                                                <label for="choice-131">Maybe</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <textarea class="small" id="more2" placeholder="Add some more?"></textarea>
+                                    <div class="input-wrapper w-25">
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="step-content-wrapper">
+                                    <textarea class="big mb-24" placeholder="Add some more?"></textarea>
+                                    <div class="additional-modal">
+                                        <div class="additional-modal__row">
+                                            <div class="additional-modal__label">Native Lang</div>
+                                            <select class="custom-select" name="option">
+                                                <option value="opt1">Russia</option>
+                                                <option value="opt2">America</option>
+                                                <option value="opt3">xcvxvxcv</option>
+                                                <option value="opt4">Russia</option>
+                                                <option value="opt5">America</option>
+                                                <option value="opt6">Japan</option>
+                                                <option value="opt7">Russia</option>
+                                                <option value="opt8">America</option>
+                                                <option value="opt9">Japan</option>
+                                                <option value="opt10">Russia</option>
+                                                <option value="opt11">America</option>
+                                                <option value="opt12">Japan</option>
+                                                <option value="opt13">Russia</option>
+                                                <option value="opt14">America</option>
+                                                <option value="opt15">xcvxvxcv</option>
+                                                <option value="opt16">Russia</option>
+                                                <option value="opt17">America</option>
+                                                <option value="opt18" selected>Japan</option>
+                                                <option value="opt19">Russia</option>
+                                                <option value="opt20">America</option>
+                                            </select>
+                                        </div>
+                                        <div class="additional-modal__row">
+                                            <div class="additional-modal__label">Phone</div>
+                                            <div class="input-wrapper d-flex align-items-center">
+                                                <input type="text" placeholder="Phone" value="+7 798-223-24-53" readonly>
+                                                <button class="change-button" type="button">Change</button>
+                                            </div>
+                                        </div>
+                                        <div class="additional-modal__row">
+                                            <div class="additional-modal__label">Allow calls</div>
+                                            <div class="d-flex align-items-center gap-3">
+                                                <div class="time-range">
+                                                    <div class="input-wrapper">
+                                                        <input type="text" placeholder="" value="10:00"> <span class="time-type">AM</span>
+                                                    </div> <span>to</span>
+                                                    <div class="input-wrapper">
+                                                        <input type="text" placeholder="" value="11:00"> <span class="time-type">PM</span>
+                                                    </div>
+                                                </div>
+                                                <label class="toggle mr-16">
+                                                    <input type="checkbox" id="24h"> <span class="toggle__slider"></span> <span class="toggle__title">24h</span>
+                                                </label>
+                                                <label class="toggle">
+                                                    <input type="checkbox"> <span class="toggle__slider"></span> <span class="toggle__title">Any Time</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="additional-modal__row align-items-start mb-32">
+                                            <div class="additional-modal__label">Notifications</div>
+                                            <div class="pl-8">
+                                                <label class="toggle mb-8">
+                                                    <input type="checkbox"> <span class="toggle__slider"></span> <span class="toggle__title">Chat</span>
+                                                </label>
+                                                <label class="toggle mb-8">
+                                                    <input type="checkbox"> <span class="toggle__slider"></span> <span class="toggle__title">SMS / Massagers</span>
+                                                </label>
+                                                <label class="toggle">
+                                                    <input type="checkbox"> <span class="toggle__slider"></span> <span class="toggle__title">Phone calls</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="additional-modal__row">
+                                            <div class="additional-modal__label">Desired Price</div>
+                                            <div class="d-flex align-items-center gap-3">
+                                                <div class="input-wrapper price">
+                                                    <input type="text" placeholder="" value="900,400"> <span>AED</span>
+                                                </div> <span class="avr-price-label">AVR Price: 300-2,700 AED</span>
+                                            </div>
+                                        </div>
+                                        <div class="additional-modal__row">
+                                            <div class="additional-modal__label">Address</div>
+                                            <div class="input-wrapper address"> <a href="javascript:void(0)" id="open-map-modal">
+
+                    <img src="/static/images/icons/map-point-icon.svg" alt="Map">
+
+                    <span>Map</span>
+
+                  </a>
+                                                <input type="text" placeholder="" value="Icon II Tower, Dubai Marina, Dubai">
+                                            </div>
+                                        </div>
+                                        <div class="additional-modal__row mb-32 align-items-start">
+                                            <div class="additional-modal__label">Photo</div>
+                                            <div class="additional-modal__dropzone-wrapper">
+                                                <div class="dropzone" id="dropzone" id="upload-photo-dropzone">
+                                                    <div class="dropzone__add-new" id="add-new-image">
+                                                        <img src="/static/images/icons/camera-icon.svg" alt="Add">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--показывается везде кроме последнего шага-->
+                                <div class="d-flex align-items-center gap-32 mt-28">
+                                    <button class="button next-step">Next Step</button> <a href="#">Skip Steps</a>
+                                </div>
+                                <!--показывается на последнем шаге -->
+                                <div class="main-block__buttons">
+                                    <button class="place-job-button mx-auto" id="place-job-button">Place Your Job</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-modal-overlay">
+                        <div class="map-modal">
+                            <div class="map-modal__map-wrapper"></div>
+                            <div class="map-modal__footer">
+                                <button class="button" id="save-address">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="additional-modal-overlay"></div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer @@param">
+            <div class="container pt-52 pb-44">
+                <div class="row">
+                    <div class="offset-lg-1 col-lg-10">
+                        <div class="d-flex flex-wrap w-100 justify-content-between gap-32 align-items-end">
+                            <div>
+                                <div class="mb-16"> <a href="#" class="footer__company">
+                <img src="/static/images/everlook-lighter.svg" alt="Everlook">
+              </a>
+
+                                </div>
+                                <div class="footer__copyright">© 2023 EVERLOOK LTD, Dubai UAE, No. 05272398</div>
+                            </div>
+                            <div class="footer__menu"> <a href="#">Terms and conditions</a>
+ <a href="#">Privacy notice</a>
+ <a href="#">Support</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="/static/js/jquery.min.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+        <script src="/static/js/dropzone.min.js"></script>
+        <script src="/static/js/create-job.js"></script>
+    </body>
+
+</html>

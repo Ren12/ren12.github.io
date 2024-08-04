@@ -1,0 +1,13 @@
+<svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M63 42V62H18V6H63V13" stroke="#66748E" stroke-width="3"/>
+<path d="M29.5 62H3" stroke="#66748E" stroke-width="3"/>
+<path d="M23 13H39" stroke="#66748E" stroke-width="2"/>
+<path d="M23 19H39" stroke="#66748E" stroke-width="2"/>
+<path d="M23 25H39" stroke="#66748E" stroke-width="2"/>
+<path d="M23 31L38 31" stroke="#66748E" stroke-width="2"/>
+<path d="M23 37L38 37" stroke="#66748E" stroke-width="2"/>
+<path d="M23 43L38 43" stroke="#66748E" stroke-width="2"/>
+<path d="M23 49L38 49" stroke="#66748E" stroke-width="2"/>
+<path d="M23 55L38 55" stroke="#66748E" stroke-width="2"/>
+<rect x="55" y="13" width="10" height="29" stroke="#66748E" stroke-width="2"/>
+</svg>
