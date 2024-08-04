@@ -26329,21 +26329,22 @@ p.block-description.text-gray {
 .clipboard {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
   height: 630px;
   width: 1238px;
-  margin: auto;
   background-color: #E7E8E5;
-  background-image: url("../images/Everlook-main.jpg");
+  background-image: url("../images/Everlook-roof.png");
   background-position: top;
   background-repeat: no-repeat;
   background-size: auto 685px;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .shadowboard {
   pointer-events: none;
-  opacity: 0.3;
+  opacity: 0.25;
   -webkit-transition: opacity 0.375s;
   transition: opacity 0.375s;
 }
