@@ -212,7 +212,7 @@ $('.map-modal-overlay').on('click', function(e) {
 });
 
 $('.tag').on('mouseenter', function () {
-    $('.clipboard').css({clipPath: 'polygon(670px 512px, 894px 222px, 1116px 280px, 942px 600px)'});
+    $('.clipboard').css({clipPath: 'polygon(50% 35%, 70% 35%, 70% 55%, 50% 55%)'});
 });
 
 $('.tag').on('mouseleave', function () {
