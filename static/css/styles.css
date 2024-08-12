@@ -26563,8 +26563,8 @@ p.block-description.text-gray {
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-animation: blink 3s linear 3s infinite;
-  animation: blink 3s linear 3s infinite;
+  -webkit-animation: blink 3s linear 1.5s infinite;
+  animation: blink 3s linear 1.5s infinite;
   -webkit-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
   transform: translateX(-100%);
